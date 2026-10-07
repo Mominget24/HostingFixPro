@@ -1,0 +1,6 @@
+{
+  "name": "HostingFixPro - Web Hosting & Domain Setup",
+  "description": "Expert web hosting comparisons, step-by-step site migration guides, live speed benchmarks, and free domain diagnostic tools by experienced web engineers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
