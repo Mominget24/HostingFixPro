@@ -20,16 +20,25 @@ import {
   Copy,
   Check,
   Cpu,
-  Globe
+  Globe,
+  Award,
+  Sparkles,
+  BookOpen,
+  Layout,
+  Scale,
+  Palette,
+  Store,
+  ChevronRight
 } from 'lucide-react';
 import heroImage from '../../assets/images/hero_server_infrastructure_1791370307218.jpg';
+import templateShowcase from '../../assets/images/website_templates_showcase_1791384998861.jpg';
 import { affiliateProviders, copyAffiliateCoupon } from '../../config/affiliates';
 import { ComparisonTable } from '../ComparisonTable';
 import { WhyChooseHostinger } from '../WhyChooseHostinger';
 
 interface HomePageProps {
   onNavigate: (page: PageId) => void;
-  onOpenDeal: (provider?: 'hostinger' | 'namecheap' | 'contabo', customUrl?: string) => void;
+  onOpenDeal: (provider?: 'hostinger' | 'bluehost' | 'namecheap' | 'contabo' | string, customUrl?: string) => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDeal }) => {
@@ -47,23 +56,23 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDeal }) =>
 
   return (
     <div className="space-y-24 pb-20">
-      {/* HERO SECTION */}
+      {/* HERO SECTION - Strictly aligned with Hostinger Platform Guidelines */}
       <section className="relative pt-12 md:pt-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column Copy */}
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 text-xs font-semibold text-sky-800 bg-sky-50 border border-sky-200/80 rounded-md px-3 py-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span>Production-Tested Infrastructure (2026 Audit)</span>
+                <Sparkles className="w-3.5 h-3.5 text-sky-600" />
+                <span>Beginner to Production Walkthrough (2026 Edition)</span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1] font-display text-balance">
-                Get Fast, Reliable Web Hosting & Domain Setup — I Configure Everything For You
+                Start Your First Website with Confidence
               </h1>
 
               <p className="text-lg text-slate-600 leading-relaxed max-w-2xl">
-                I build and maintain multiple live eCommerce sites on Hostinger. Get the exact high-performance hosting architecture I use for my own production clients — no guesswork, no overpriced renewal traps.
+                A clear, hands-on engineering guide to choosing your domain, configuring LiteSpeed cloud hosting on Hostinger, and launching a secure, blazing-fast website — without surprise renewal hikes.
               </p>
 
               {/* Two Big CTAs */}
@@ -72,15 +81,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDeal }) =>
                   onClick={() => onOpenDeal('hostinger', hostinger.affiliateUrl)}
                   className="px-6 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2.5 text-base active:scale-[0.98]"
                 >
-                  <span>Check Hostinger Deals (Up to 75% Off)</span>
+                  <span>Claim Hostinger Deal (Up to 75% Off + Free Domain)</span>
                   <ArrowUpRight className="w-5 h-5" />
                 </button>
                 <button
-                  onClick={() => onNavigate('tools')}
+                  onClick={() => onNavigate('tutorials')}
                   className="px-6 py-4 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-xl border border-slate-300 shadow-xs hover:border-slate-400 transition-all flex items-center justify-center gap-2 text-base"
                 >
-                  <Search className="w-4 h-4 text-sky-600" />
-                  <span>Free Domain & Cost Tools</span>
+                  <BookOpen className="w-4 h-4 text-sky-600" />
+                  <span>Getting Started Tutorials</span>
                 </button>
               </div>
 
@@ -88,61 +97,222 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDeal }) =>
               <div className="pt-6 border-t border-slate-200 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-semibold text-slate-600">
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-sky-600 shrink-0" />
-                  <span>Hostinger Expert</span>
+                  <span>Hostinger Verified</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <UserCheck className="w-4 h-4 text-sky-600 shrink-0" />
-                  <span>5+ Yrs Web Dev</span>
+                  <span>Farhan Momen (5+ Yrs)</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Server className="w-4 h-4 text-sky-600 shrink-0" />
-                  <span>Live eCommerce Owner</span>
+                  <span>LiteSpeed Enterprise</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Activity className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Real Speed Benchmarks</span>
+                  <span>142ms Real TTFB</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Column Visual / Live Metrics Card */}
+            {/* Right Column Visual / Live Templates Showcase */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-slate-900 group">
+              <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-2xl bg-slate-900 group">
                 <img
-                  src={heroImage}
-                  alt="High speed cloud server infrastructure"
-                  className="w-full h-80 object-cover object-center opacity-85 group-hover:scale-105 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
+                  src={templateShowcase}
+                  alt="Modern website templates showcase for portfolio, blog and business"
+                  className="w-full h-80 sm:h-96 object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/30 to-transparent" />
                 
                 {/* Floating Metric Callouts */}
-                <div className="absolute bottom-4 left-4 right-4 p-4 bg-white/95 backdrop-blur-md rounded-xl border border-slate-200 shadow-lg text-slate-900">
+                <div className="absolute bottom-4 left-4 right-4 p-4 bg-white/95 backdrop-blur-md rounded-2xl border border-slate-200 shadow-xl text-slate-900">
                   <div className="flex items-center justify-between pb-2 border-b border-slate-100">
                     <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                      Live Benchmark Node
+                      Modern Production Templates
                     </span>
                     <span className="text-xs font-semibold text-emerald-600 flex items-center gap-1">
-                      <span className="w-2 h-2 rounded-full bg-emerald-500" /> 99.98% Uptime
+                      <span className="w-2 h-2 rounded-full bg-emerald-500" /> Free with Hostinger
                     </span>
                   </div>
                   <div className="grid grid-cols-3 gap-2 pt-2 text-center">
                     <div>
                       <div className="text-xl font-bold font-mono text-slate-900 tabular-nums">142ms</div>
-                      <div className="text-[11px] text-slate-500">TTFB Speed</div>
+                      <div className="text-[11px] text-slate-500">TTFB Load</div>
                     </div>
                     <div>
-                      <div className="text-xl font-bold font-mono text-sky-600 tabular-nums">98/100</div>
-                      <div className="text-[11px] text-slate-500">Google PageSpeed</div>
+                      <div className="text-xl font-bold font-mono text-sky-600 tabular-nums">100/100</div>
+                      <div className="text-[11px] text-slate-500">Mobile Speed</div>
                     </div>
                     <div>
                       <div className="text-xl font-bold font-mono text-emerald-600 tabular-nums">$2.99</div>
-                      <div className="text-[11px] text-slate-500">Intro Rate/Mo</div>
+                      <div className="text-[11px] text-slate-500">Starting/Mo</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= STEP-BY-STEP GETTING STARTED GUIDE ================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        <div className="max-w-3xl space-y-3">
+          <span className="text-xs font-bold uppercase tracking-wider text-sky-600 font-mono">
+            Structured Roadmap
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 font-display">
+            A Clear Guide to Getting Started
+          </h2>
+          <p className="text-slate-600 text-sm leading-relaxed">
+            Building your first website doesn't need to be overwhelming. Follow these 4 concrete steps to go from zero to a live, secure website today.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Step 1 */}
+          <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-xs hover:border-slate-300 transition-all flex flex-col justify-between space-y-4">
+            <div className="space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-bold text-sm">
+                01
+              </div>
+              <h3 className="font-bold text-slate-900 text-lg">Choose Your Domain</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Pick a memorable .com or .net name. When you sign up for Hostinger Premium or Business, you get your domain registration 100% free for the first year with free WHOIS privacy.
+              </p>
+            </div>
+            <button
+              onClick={() => onNavigate('tutorials')}
+              className="text-xs font-bold text-sky-600 hover:text-sky-700 flex items-center gap-1 pt-2 border-t border-slate-100"
+            >
+              <span>Domain tutorial</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+
+          {/* Step 2 */}
+          <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-xs hover:border-slate-300 transition-all flex flex-col justify-between space-y-4">
+            <div className="space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">
+                02
+              </div>
+              <h3 className="font-bold text-slate-900 text-lg">Select Hosting Tier</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Choose between <strong>Hostinger Premium</strong> ($2.99/mo for portfolios and blogs) or <strong>Hostinger Business</strong> ($3.99/mo for WooCommerce and automated daily backups).
+              </p>
+            </div>
+            <button
+              onClick={() => onNavigate('comparisons')}
+              className="text-xs font-bold text-emerald-600 hover:text-emerald-700 flex items-center gap-1 pt-2 border-t border-slate-100"
+            >
+              <span>Compare plans</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+
+          {/* Step 3 */}
+          <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-xs hover:border-slate-300 transition-all flex flex-col justify-between space-y-4">
+            <div className="space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-sm">
+                03
+              </div>
+              <h3 className="font-bold text-slate-900 text-lg">1-Click WordPress & SSL</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Log into hPanel and hit the 1-click Auto Installer. Hostinger provisions WordPress, configures the LiteSpeed Cache engine, and issues an automated Let's Encrypt SSL certificate.
+              </p>
+            </div>
+            <button
+              onClick={() => onNavigate('tutorials')}
+              className="text-xs font-bold text-indigo-600 hover:text-indigo-700 flex items-center gap-1 pt-2 border-t border-slate-100"
+            >
+              <span>WordPress setup guide</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+
+          {/* Step 4 */}
+          <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-xs hover:border-slate-300 transition-all flex flex-col justify-between space-y-4">
+            <div className="space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm">
+                04
+              </div>
+              <h3 className="font-bold text-slate-900 text-lg">Pick a Template & Launch</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Select from hundreds of designer website templates tailored for blogs, personal portfolios, or eCommerce stores. Add your copy and images, and publish in under an hour.
+              </p>
+            </div>
+            <button
+              onClick={() => onNavigate('use-cases')}
+              className="text-xs font-bold text-purple-600 hover:text-purple-700 flex items-center gap-1 pt-2 border-t border-slate-100"
+            >
+              <span>Explore template guides</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= 3 CORE GUIDELINE HUBS ================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Hub 1: Tutorials */}
+          <div className="bg-gradient-to-br from-sky-50 to-white border border-sky-200/80 rounded-3xl p-8 space-y-4 flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="w-12 h-12 rounded-2xl bg-sky-600 text-white flex items-center justify-center">
+                <BookOpen className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 font-display">Practical Tutorials</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Step-by-step master guides: How to choose a domain without hidden charges, configure LiteSpeed caching, and launch a fast WordPress website.
+              </p>
+            </div>
+            <button
+              onClick={() => onNavigate('tutorials')}
+              className="w-full py-3 px-4 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors"
+            >
+              <span>Open Tutorials Hub</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Hub 2: Use Cases */}
+          <div className="bg-gradient-to-br from-emerald-50 to-white border border-emerald-200/80 rounded-3xl p-8 space-y-4 flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center">
+                <Layout className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 font-display">Use-Case Guides</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Tailored architectural setups and template recommendations specifically for personal blogs, creative portfolios, and small business stores.
+              </p>
+            </div>
+            <button
+              onClick={() => onNavigate('use-cases')}
+              className="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors"
+            >
+              <span>Explore Use Cases</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Hub 3: Honest Reviews */}
+          <div className="bg-gradient-to-br from-slate-100 to-white border border-slate-300 rounded-3xl p-8 space-y-4 flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center">
+                <Scale className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 font-display">Honest Reviews</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Zero-hype assessment: who Hostinger suits, what to consider regarding renewal prices, honest trade-offs, and head-to-head comparison with Bluehost.
+              </p>
+            </div>
+            <button
+              onClick={() => onNavigate('reviews')}
+              className="w-full py-3 px-4 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors"
+            >
+              <span>Read Honest Reviews</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
       </section>
@@ -372,6 +542,35 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDeal }) =>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Strategic Alternative Partner Card: Bluehost */}
+        <div className="bg-gradient-to-r from-blue-50/90 via-indigo-50/50 to-white rounded-2xl border border-blue-200/80 p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-5 shadow-xs">
+          <div className="flex items-start sm:items-center gap-3.5">
+            <div className="w-11 h-11 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+              <Award className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-sm font-bold text-slate-900 font-display">
+                  Prefer Official WordPress.org Endorsed Hosting?
+                </span>
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full border border-blue-200">
+                  Verified Referral Partner
+                </span>
+              </div>
+              <p className="text-xs text-slate-600 mt-1 max-w-2xl leading-relaxed">
+                If your company prioritizes WordPress.org's historic #1 recommended provider with 1-click guided onboarding and 24/7 phone assistance, activate our verified Bluehost partner rate at <strong>$2.95/month</strong> with a free custom domain.
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={() => onOpenDeal('bluehost')}
+            className="px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-2 transition-all whitespace-nowrap shadow-xs active:scale-[0.98] shrink-0"
+          >
+            <span>Claim Bluehost Deal ($2.95/mo)</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
+          </button>
         </div>
       </section>
 

@@ -78,19 +78,19 @@ export const comparisonsList: HostComparison[] = [
     id: 'hostinger-vs-bluehost',
     name: 'Hostinger',
     rivalName: 'Bluehost Choice Plus',
-    tagline: 'Modern Cloud Architecture vs Newfold Digital (EIG) Legacy',
-    winner: 'Hostinger',
-    winnerReason: 'Hostinger is half the cost of Bluehost while loading 2.5x faster in Google PageSpeed Insights.',
+    tagline: 'Modern LiteSpeed Cloud vs Official WordPress.org Endorsed Host',
+    winner: 'Hostinger (Speed & Value) / Bluehost (WordPress.org Endorsed)',
+    winnerReason: 'Hostinger delivers 2.5x faster page loading speeds and lower ongoing renewal costs. Bluehost offers official WordPress.org endorsement and beginner-friendly guided onboarding.',
     speedScore: 98,
-    rivalSpeedScore: 68,
+    rivalSpeedScore: 78,
     ttfbMs: 142,
     rivalTtfbMs: 512,
     pricePerMo: '$2.99',
-    rivalPricePerMo: '$4.95',
+    rivalPricePerMo: '$2.95',
     renewalPerMo: '$6.99',
-    rivalRenewalPerMo: '$14.99',
-    bestFor: 'Freelancers, bloggers, and e-commerce stores wanting maximum value and performance.',
-    rivalBestFor: 'Absolute beginners following outdated 2018 YouTube affiliate tutorials.',
+    rivalRenewalPerMo: '$10.99',
+    bestFor: 'Freelancers, bloggers, and e-commerce stores wanting maximum speed and NVMe hardware.',
+    rivalBestFor: 'Beginners who specifically want the official WordPress.org-recommended brand and 24/7 phone support.',
     serverType: 'LiteSpeed + NVMe SSD',
     rivalServerType: 'Apache + Shared Cloud',
     freeDomain: true,
@@ -98,15 +98,17 @@ export const comparisonsList: HostComparison[] = [
     freeSsl: true,
     rivalFreeSsl: true,
     hostingerAffiliateUrl: 'https://www.hostinger.com/bd?REFERRALCODE=XV5MARCWR0H8',
-    rivalAffiliateUrl: 'https://www.bluehost.com',
-    summary: 'Bluehost is heavily promoted by affiliates because of high one-time commissions, but real performance audits reveal significant slow TTFB and an aggressive upsell funnel during checkout. Hostinger provides transparent pricing, faster loading times, and superior customer support response.',
+    rivalAffiliateUrl: 'https://referral.bluehost.com/mominget24!cc082c6228!a',
+    summary: 'Both Hostinger and Bluehost are industry titans. In our independent benchmarks, Hostinger wins decisively on raw TTFB latency (142ms vs 512ms) and renewal affordability. However, Bluehost remains an officially recommended host by WordPress.org since 2005, making it a reliable choice for beginners who prefer phone support and guided setup wizards.',
     pros: [
-      '2.5x faster page load in verified tests',
-      'Clean checkout without hidden auto-added add-ons',
-      'Git integration, SSH access, and PHP version switcher included'
+      'Hostinger: 2.5x faster page loads with LiteSpeed caching',
+      'Hostinger: Low renewal pricing ($6.99/mo) and modern hPanel',
+      'Bluehost: Officially recommended by WordPress.org since 2005',
+      'Bluehost: 24/7 dedicated phone support and guided site wizard'
     ],
     cons: [
-      'Bluehost offers cPanel if you prefer traditional cPanel layouts'
+      'Hostinger has live chat support only (no phone support)',
+      'Bluehost servers are slower on international traffic compared to Hostinger multi-region nodes'
     ]
   }
 ];
@@ -123,8 +125,22 @@ export const budgetHostingShowdown = [
     freeSsl: 'Unlimited Free',
     ttfb: '142 ms',
     rating: 4.9,
-    highlight: 'Best Overall Performance',
+    highlight: '#1 Editor’s Choice (Fastest Speed)',
     dealUrl: 'https://www.hostinger.com/bd?REFERRALCODE=XV5MARCWR0H8'
+  },
+  {
+    name: 'Bluehost Basic',
+    introPrice: '$2.95/mo',
+    renewalPrice: '$10.99/mo',
+    storage: '10 GB SSD',
+    websites: '1 Site',
+    bandwidth: 'Unmetered',
+    freeDomain: 'Yes (1 Year)',
+    freeSsl: 'Free SSL Included',
+    ttfb: '512 ms',
+    rating: 4.7,
+    highlight: 'Official WordPress.org Pick',
+    dealUrl: 'https://referral.bluehost.com/mominget24!cc082c6228!a'
   },
   {
     name: 'Namecheap Stellar',
@@ -133,25 +149,11 @@ export const budgetHostingShowdown = [
     storage: '20 GB SSD',
     websites: '3 Sites',
     bandwidth: 'Unmetered',
-    freeDomain: 'Yes (.website / .com promo)',
+    freeDomain: 'Yes (.website promo)',
     freeSsl: '50 Free (First Year)',
     ttfb: '340 ms',
     rating: 4.4,
-    highlight: 'Lowest Upfront Cost',
-    dealUrl: 'https://www.hostinger.com/bd?REFERRALCODE=XV5MARCWR0H8'
-  },
-  {
-    name: 'IONOS Plus',
-    introPrice: '$1.00/mo',
-    renewalPrice: '$13.00/mo',
-    storage: 'Unlimited SSD',
-    websites: 'Unlimited',
-    bandwidth: 'Unlimited',
-    freeDomain: 'Yes (1 Year)',
-    freeSsl: '1 Wildcard SSL',
-    ttfb: '290 ms',
-    rating: 4.1,
-    highlight: 'Extreme $1 Promo (Watch Renewal)',
+    highlight: 'Budget Starter Option',
     dealUrl: 'https://www.hostinger.com/bd?REFERRALCODE=XV5MARCWR0H8'
   }
 ];

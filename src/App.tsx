@@ -12,13 +12,16 @@ import { DomainGuidePage } from './components/pages/DomainGuidePage';
 import { BlogPage } from './components/pages/BlogPage';
 import { AboutPage } from './components/pages/AboutPage';
 import { ContactPage } from './components/pages/ContactPage';
-import { affiliateProviders } from './config/affiliates';
+import { TutorialsPage } from './components/pages/TutorialsPage';
+import { HonestReviewPage } from './components/pages/HonestReviewPage';
+import { UseCasesPage } from './components/pages/UseCasesPage';
+import { affiliateProviders, trackAffiliateClick } from './config/affiliates';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
-    provider?: 'hostinger' | 'namecheap' | 'contabo';
+    provider?: 'hostinger' | 'bluehost' | 'namecheap' | 'contabo' | string;
     customUrl?: string;
   }>({
     isOpen: false,
@@ -29,9 +32,13 @@ export default function App() {
   // Sync hash routing on initial load and hash change
   useEffect(() => {
     const handleHash = () => {
-      const hash = window.location.hash.replace('#', '') as PageId;
+      const rawHash = window.location.hash.replace('#', '');
+      const hash = (rawHash === 'honest-reviews' ? 'reviews' : rawHash) as PageId;
       const validPages: PageId[] = [
         'home', 
+        'tutorials',
+        'reviews',
+        'use-cases',
         'comparisons', 
         'migration-guide', 
         'tools', 
@@ -50,21 +57,26 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHash);
   }, []);
 
-  const handleNavigate = (page: PageId) => {
-    setCurrentPage(page);
-    window.location.hash = page === 'home' ? '' : page;
+  const handleNavigate = (page: PageId | 'honest-reviews') => {
+    const targetPage: PageId = page === 'honest-reviews' ? 'reviews' : page;
+    setCurrentPage(targetPage);
+    window.location.hash = targetPage === 'home' ? '' : targetPage;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleOpenDeal = (
-    provider: 'hostinger' | 'namecheap' | 'contabo' | string = 'hostinger', 
+    provider: 'hostinger' | 'bluehost' | 'namecheap' | 'contabo' | string = 'hostinger', 
     customUrl?: string
   ) => {
-    const norm = (provider?.toLowerCase() || 'hostinger') as 'hostinger' | 'namecheap' | 'contabo';
+    const norm = (provider?.toLowerCase() || 'hostinger');
+    const matchedProvider = affiliateProviders[norm] || affiliateProviders.hostinger;
+    const targetUrl = customUrl || matchedProvider.affiliateUrl;
+    trackAffiliateClick(norm, currentPage, targetUrl);
+
     setModalState({
       isOpen: true,
       provider: norm,
-      customUrl: customUrl || affiliateProviders[norm]?.affiliateUrl || affiliateProviders.hostinger.affiliateUrl
+      customUrl: targetUrl
     });
   };
 
@@ -89,10 +101,28 @@ export default function App() {
             onOpenDeal={handleOpenDeal} 
           />
         )}
+        {currentPage === 'tutorials' && (
+          <TutorialsPage 
+            onNavigate={handleNavigate} 
+            onOpenDeal={handleOpenDeal} 
+          />
+        )}
+        {currentPage === 'reviews' && (
+          <HonestReviewPage 
+            onNavigate={handleNavigate} 
+            onOpenDeal={handleOpenDeal} 
+          />
+        )}
+        {currentPage === 'use-cases' && (
+          <UseCasesPage 
+            onNavigate={handleNavigate} 
+            onOpenDeal={handleOpenDeal} 
+          />
+        )}
         {currentPage === 'comparisons' && (
           <ComparisonsPage 
             onNavigate={handleNavigate} 
-            onOpenDeal={() => handleOpenDeal('hostinger')} 
+            onOpenDeal={handleOpenDeal} 
           />
         )}
         {currentPage === 'migration-guide' && (
@@ -136,7 +166,7 @@ export default function App() {
       {/* Global Footer */}
       <Footer
         onNavigate={handleNavigate}
-        onOpenDeal={() => handleOpenDeal('hostinger')}
+        onOpenDeal={handleOpenDeal}
       />
 
       {/* Requirement 01: Affiliate Sticky Bottom Bar */}

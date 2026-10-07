@@ -121,6 +121,8 @@ export const legacyCompetitors = [
 export const HOSTINGER_AFFILIATE_URL = 'https://www.hostinger.com/bd?REFERRALCODE=XV5MARCWR0H8';
 export const HOSTINGER_COUPON_CODE = 'XV5MARCWR0H8';
 
+export const BLUEHOST_AFFILIATE_URL = 'https://referral.bluehost.com/mominget24!cc082c6228!a';
+
 export interface AffiliateProvider {
   id: string;
   name: string;
@@ -147,6 +149,21 @@ export const affiliateProviders: Record<string, AffiliateProvider> = {
       'Ultra-Fast NVMe SSD Storage & LiteSpeed Web Server',
       'Free Automated Backups & 1-Click Zero Downtime Migration',
       '24/7 Fast Live Support with WordPress Server Engineers'
+    ]
+  },
+  bluehost: {
+    id: 'bluehost',
+    name: 'Bluehost',
+    tagline: 'Official WordPress.org Recommended Hosting & 1-Click Setup',
+    discountText: 'Exclusive Bluehost Partner Rate ($2.95/mo) + Free Domain',
+    affiliateUrl: BLUEHOST_AFFILIATE_URL,
+    badge: 'Official WordPress.org Partner',
+    features: [
+      'Officially Recommended by WordPress.org since 2005',
+      'Free Custom Domain (.com, .net, etc.) for 1st Year',
+      'Automatic 1-Click WordPress Installation Wizard',
+      'Free SSL Certificate & 24/7 Phone + Chat Expert Support',
+      'Beginner-Friendly cPanel & Guided Onboarding'
     ]
   },
   namecheap: {
@@ -186,3 +203,29 @@ export const copyAffiliateCoupon = (code: string = HOSTINGER_COUPON_CODE): Promi
     .then(() => true)
     .catch(() => false);
 };
+
+export interface AffiliateClickEvent {
+  providerId: string;
+  sourcePage: string;
+  timestamp: string;
+  targetUrl: string;
+}
+
+export const trackAffiliateClick = (providerId: string, sourcePage: string, targetUrl: string) => {
+  try {
+    const rawHistory = localStorage.getItem('hfp_affiliate_clicks') || '[]';
+    const history: AffiliateClickEvent[] = JSON.parse(rawHistory);
+    history.push({
+      providerId,
+      sourcePage,
+      timestamp: new Date().toISOString(),
+      targetUrl
+    });
+    // Keep last 50 events in privacy-friendly local storage
+    if (history.length > 50) history.shift();
+    localStorage.setItem('hfp_affiliate_clicks', JSON.stringify(history));
+  } catch {
+    // Fail silently in restricted local storage environments
+  }
+};
+

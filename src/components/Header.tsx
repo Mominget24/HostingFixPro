@@ -13,11 +13,11 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate, onOpenD
 
   const navLinks: { id: PageId; label: string }[] = [
     { id: 'home', label: 'Home' },
+    { id: 'tutorials', label: 'Tutorials' },
+    { id: 'use-cases', label: 'Use Cases' },
+    { id: 'reviews', label: 'Honest Review' },
     { id: 'comparisons', label: 'Comparisons' },
-    { id: 'migration-guide', label: 'Migration Guide' },
     { id: 'tools', label: 'Free Tools' },
-    { id: 'domain-guide', label: 'Domain Guide' },
-    { id: 'blog', label: 'Blog' },
     { id: 'about', label: 'About' },
     { id: 'contact', label: 'Contact' },
   ];

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PageId, BlogPost } from '../../types';
 import { blogArticles } from '../../data/blogData';
+import { BLUEHOST_AFFILIATE_URL, HOSTINGER_AFFILIATE_URL } from '../../config/affiliates';
 import { 
   Search, 
   ArrowUpRight, 
@@ -11,14 +12,15 @@ import {
   Tag, 
   Check, 
   Copy, 
-  X,
-  Share2,
-  BookmarkCheck
+  X, 
+  Share2, 
+  BookmarkCheck,
+  Award
 } from 'lucide-react';
 
 interface BlogPageProps {
   onNavigate: (page: PageId) => void;
-  onOpenDeal: (provider?: 'Hostinger' | 'Namecheap', customUrl?: string) => void;
+  onOpenDeal: (provider?: any, customUrl?: string) => void;
 }
 
 export const BlogPage: React.FC<BlogPageProps> = ({ onNavigate, onOpenDeal }) => {
@@ -224,16 +226,31 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigate, onOpenDeal }) =>
                     </p>
                   </div>
 
-                  <button
-                    onClick={() => {
-                      setActiveArticle(null);
-                      onOpenDeal('Hostinger', activeArticle.affiliateUrl);
-                    }}
-                    className="px-5 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-2 transition-colors whitespace-nowrap shadow-sm"
-                  >
-                    <span>Activate Discount Now</span>
-                    <ArrowUpRight className="w-4 h-4" />
-                  </button>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <button
+                      onClick={() => {
+                        setActiveArticle(null);
+                        onOpenDeal('Hostinger', activeArticle.affiliateUrl);
+                      }}
+                      className="px-5 py-3 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold rounded-xl text-xs flex items-center justify-center gap-2 transition-colors whitespace-nowrap shadow-sm"
+                    >
+                      <span>Claim Hostinger Deal</span>
+                      <ArrowUpRight className="w-4 h-4" />
+                    </button>
+
+                    {activeArticle.slug === 'hostinger-vs-bluehost-speed' && (
+                      <button
+                        onClick={() => {
+                          setActiveArticle(null);
+                          onOpenDeal('bluehost', BLUEHOST_AFFILIATE_URL);
+                        }}
+                        className="px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-2 transition-colors whitespace-nowrap shadow-sm"
+                      >
+                        <span>Claim Bluehost Deal ($2.95)</span>
+                        <ArrowUpRight className="w-4 h-4" />
+                      </button>
+                    )}
+                  </div>
                 </div>
 
                 {activeArticle.couponCode && (

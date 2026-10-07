@@ -17,7 +17,7 @@ import {
 
 interface ComparisonsPageProps {
   onNavigate: (page: PageId) => void;
-  onOpenDeal: () => void;
+  onOpenDeal: (provider?: string, customUrl?: string) => void;
 }
 
 export const ComparisonsPage: React.FC<ComparisonsPageProps> = ({ onNavigate, onOpenDeal }) => {
@@ -107,7 +107,7 @@ export const ComparisonsPage: React.FC<ComparisonsPageProps> = ({ onNavigate, on
                   </div>
 
                   <button
-                    onClick={onOpenDeal}
+                    onClick={() => onOpenDeal('hostinger', comp.hostingerAffiliateUrl)}
                     className="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg flex items-center justify-center gap-2 shadow-xs transition-colors"
                   >
                     <span>Get Hostinger Deal ({comp.pricePerMo})</span>
@@ -119,7 +119,9 @@ export const ComparisonsPage: React.FC<ComparisonsPageProps> = ({ onNavigate, on
                 <div className="bg-slate-50 rounded-xl p-6 border border-slate-200 space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="font-bold text-slate-900 text-lg">{comp.rivalName}</span>
-                    <span className="text-xs text-slate-500">Competitor</span>
+                    <span className="text-xs text-slate-500">
+                      {comp.id === 'hostinger-vs-bluehost' ? 'Official WP Partner' : 'Competitor'}
+                    </span>
                   </div>
 
                   <div className="grid grid-cols-2 gap-3 text-sm pt-2">
@@ -147,13 +149,23 @@ export const ComparisonsPage: React.FC<ComparisonsPageProps> = ({ onNavigate, on
                     <div><strong>Best For:</strong> {comp.rivalBestFor}</div>
                   </div>
 
-                  <button
-                    onClick={onOpenDeal}
-                    className="w-full py-3 px-4 bg-white hover:bg-slate-100 text-slate-700 font-semibold rounded-lg border border-slate-300 flex items-center justify-center gap-2 transition-colors"
-                  >
-                    <span>Switch from {comp.rivalName} to Hostinger</span>
-                    <ArrowUpRight className="w-4 h-4 text-emerald-600" />
-                  </button>
+                  {comp.id === 'hostinger-vs-bluehost' ? (
+                    <button
+                      onClick={() => onOpenDeal('bluehost', comp.rivalAffiliateUrl)}
+                      className="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg flex items-center justify-center gap-2 shadow-xs transition-colors"
+                    >
+                      <span>Get Bluehost Partner Deal ({comp.rivalPricePerMo}/mo)</span>
+                      <ArrowUpRight className="w-4 h-4" />
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => onOpenDeal('hostinger')}
+                      className="w-full py-3 px-4 bg-white hover:bg-slate-100 text-slate-700 font-semibold rounded-lg border border-slate-300 flex items-center justify-center gap-2 transition-colors"
+                    >
+                      <span>Switch from {comp.rivalName} to Hostinger</span>
+                      <ArrowUpRight className="w-4 h-4 text-emerald-600" />
+                    </button>
+                  )}
                 </div>
               </div>
 
@@ -260,17 +272,25 @@ export const ComparisonsPage: React.FC<ComparisonsPageProps> = ({ onNavigate, on
                 </div>
 
                 <div className="pt-4">
-                  {idx === 0 ? (
+                  {item.name.includes('Hostinger') ? (
                     <button
-                      onClick={onOpenDeal}
+                      onClick={() => onOpenDeal('hostinger', item.dealUrl)}
                       className="w-full py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs"
                     >
                       <span>Get Hostinger Deal</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </button>
+                  ) : item.name.includes('Bluehost') ? (
+                    <button
+                      onClick={() => onOpenDeal('bluehost', item.dealUrl)}
+                      className="w-full py-2.5 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs"
+                    >
+                      <span>Get Bluehost Deal ($2.95)</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </button>
                   ) : (
                     <button
-                      onClick={onOpenDeal}
+                      onClick={() => onOpenDeal('hostinger')}
                       className="w-full py-2.5 px-4 bg-white hover:bg-slate-50 text-slate-700 font-semibold rounded-lg border border-slate-300 text-xs flex items-center justify-center gap-1.5 transition-colors"
                     >
                       <span>Why Hostinger Beats {item.name}</span>

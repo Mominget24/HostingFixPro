@@ -3,7 +3,7 @@ import { X, ArrowUpRight, Zap, Copy, Check, Tag } from 'lucide-react';
 import { affiliateProviders, copyAffiliateCoupon } from '../config/affiliates';
 
 interface AffiliateStickyBarProps {
-  onOpenDeal: (provider?: 'hostinger' | 'namecheap' | 'contabo', customUrl?: string) => void;
+  onOpenDeal: (provider?: any, customUrl?: string) => void;
 }
 
 export const AffiliateStickyBar: React.FC<AffiliateStickyBarProps> = ({ onOpenDeal }) => {
@@ -83,6 +83,14 @@ export const AffiliateStickyBar: React.FC<AffiliateStickyBarProps> = ({ onOpenDe
                 <Tag className="w-3 h-3 text-amber-400" />
                 <span>{hostinger.couponCode}</span>
                 {copied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3 text-slate-400" />}
+              </button>
+              <span className="hidden lg:inline text-slate-500">·</span>
+              <button
+                type="button"
+                onClick={() => onOpenDeal('bluehost', affiliateProviders.bluehost?.affiliateUrl)}
+                className="hidden lg:inline-flex items-center gap-1 text-[11px] text-sky-400 hover:text-sky-300 underline font-medium"
+              >
+                Prefer Bluehost? ($2.95/mo WP Deal)
               </button>
             </div>
           </div>

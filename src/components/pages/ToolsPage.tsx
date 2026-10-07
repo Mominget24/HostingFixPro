@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PageId, DomainCheckResult } from '../../types';
-import { HOSTINGER_AFFILIATE_URL, HOSTINGER_COUPON_CODE } from '../../config/affiliates';
+import { HOSTINGER_AFFILIATE_URL, HOSTINGER_COUPON_CODE, BLUEHOST_AFFILIATE_URL } from '../../config/affiliates';
 import { 
   Search, 
   Gauge, 
@@ -15,12 +15,13 @@ import {
   Sparkles, 
   ShieldCheck, 
   DollarSign,
-  ArrowRight
+  ArrowRight,
+  Award
 } from 'lucide-react';
 
 interface ToolsPageProps {
   onNavigate: (page: PageId) => void;
-  onOpenDeal: (provider?: 'Hostinger' | 'Namecheap', customUrl?: string) => void;
+  onOpenDeal: (provider?: any, customUrl?: string) => void;
 }
 
 export const ToolsPage: React.FC<ToolsPageProps> = ({ onNavigate, onOpenDeal }) => {
@@ -636,12 +637,12 @@ export const ToolsPage: React.FC<ToolsPageProps> = ({ onNavigate, onOpenDeal }) 
                 {/* Bluehost */}
                 <div className="bg-white rounded-xl p-5 border border-slate-200 space-y-4 flex flex-col justify-between">
                   <div className="space-y-2">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
-                      Traditional Brand
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-blue-600">
+                      Official WP Partner
                     </span>
                     <h3 className="font-bold text-slate-900 text-lg">Bluehost Choice</h3>
                     <div className="text-xs text-slate-500">
-                      Intro: $4.95/mo · Renewal: $14.99/mo
+                      Intro: $2.95/mo · Renewal: $10.99/mo
                     </div>
                     <div className="pt-2 border-t border-slate-100">
                       <div className="text-xs text-slate-500">Total {calcYears}-Year Cost:</div>
@@ -650,9 +651,13 @@ export const ToolsPage: React.FC<ToolsPageProps> = ({ onNavigate, onOpenDeal }) 
                       </div>
                     </div>
                   </div>
-                  <div className="text-[11px] text-slate-500 italic text-center">
-                    Costs ${(bluehostTotal - hostingerTotal).toFixed(0)} more than Hostinger!
-                  </div>
+                  <button
+                    onClick={() => onOpenDeal('bluehost', BLUEHOST_AFFILIATE_URL)}
+                    className="w-full py-2.5 px-3 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg flex items-center justify-center gap-1.5 transition-colors shadow-xs"
+                  >
+                    <span>Get Bluehost Partner Rate ($2.95)</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </button>
                 </div>
               </div>
 
@@ -820,6 +825,25 @@ export const ToolsPage: React.FC<ToolsPageProps> = ({ onNavigate, onOpenDeal }) 
                       className="text-xs text-slate-500 hover:text-slate-800 font-medium"
                     >
                       Reset Quiz
+                    </button>
+                  </div>
+
+                  {/* Strategic Secondary Match: Official WordPress.org Pick */}
+                  <div className="mt-4 pt-4 border-t border-sky-200/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white/80 p-4 rounded-xl border border-sky-100">
+                    <div className="space-y-0.5">
+                      <div className="text-xs font-bold text-blue-900 flex items-center gap-1.5">
+                        <Award className="w-4 h-4 text-blue-600" /> Prefer Official WordPress.org Endorsed Host?
+                      </div>
+                      <p className="text-xs text-slate-600">
+                        Bluehost is officially endorsed by WordPress.org since 2005. Includes 1-click wizard, free domain, and 24/7 phone assistance.
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => onOpenDeal('bluehost', BLUEHOST_AFFILIATE_URL)}
+                      className="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs whitespace-nowrap flex items-center gap-1.5 transition-colors shrink-0 shadow-xs"
+                    >
+                      <span>Claim Bluehost ($2.95/mo)</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
                 </div>

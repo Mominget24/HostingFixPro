@@ -4,7 +4,7 @@ import { ShieldCheck, Mail, ArrowRight } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: PageId) => void;
-  onOpenDeal: () => void;
+  onOpenDeal: (provider?: any, customUrl?: string) => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenDeal }) => {
@@ -47,6 +47,30 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenDeal }) => {
               </li>
               <li>
                 <button
+                  onClick={() => onNavigate('tutorials')}
+                  className="hover:text-white transition-colors"
+                >
+                  Tutorials
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavigate('use-cases')}
+                  className="hover:text-white transition-colors"
+                >
+                  Use Cases
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavigate('reviews')}
+                  className="hover:text-white transition-colors"
+                >
+                  Honest Review
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => onNavigate('comparisons')}
                   className="hover:text-white transition-colors"
                 >
@@ -59,22 +83,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenDeal }) => {
                   className="hover:text-white transition-colors"
                 >
                   Migration Guide
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => onNavigate('domain-guide')}
-                  className="hover:text-white transition-colors"
-                >
-                  Domain Guide
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => onNavigate('blog')}
-                  className="hover:text-white transition-colors"
-                >
-                  Articles & Reviews
                 </button>
               </li>
             </ul>
@@ -161,10 +169,19 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenDeal }) => {
               </li>
               <li className="pt-2">
                 <button
-                  onClick={onOpenDeal}
+                  onClick={() => onOpenDeal('hostinger')}
                   className="text-xs text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1"
                 >
-                  <span>Hostinger 75% Off Coupon</span>
+                  <span>Hostinger 75% Off Deal</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onOpenDeal('bluehost')}
+                  className="text-xs text-sky-400 hover:text-sky-300 font-semibold flex items-center gap-1"
+                >
+                  <span>Bluehost Official WP Deal ($2.95)</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </li>

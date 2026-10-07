@@ -5,7 +5,7 @@ import { affiliateProviders, copyAffiliateCoupon } from '../config/affiliates';
 interface AffiliateModalProps {
   isOpen: boolean;
   onClose: () => void;
-  provider?: 'hostinger' | 'namecheap' | 'contabo' | 'Hostinger' | 'Namecheap';
+  provider?: 'hostinger' | 'bluehost' | 'namecheap' | 'contabo' | string;
   customUrl?: string;
 }
 
@@ -22,15 +22,18 @@ export const AffiliateModal: React.FC<AffiliateModalProps> = ({
   const normalizedProviderKey = (provider?.toLowerCase() || 'hostinger') as keyof typeof affiliateProviders;
   const providerData = affiliateProviders[normalizedProviderKey] || affiliateProviders.hostinger;
 
-  const coupon = providerData.couponCode || 'XV5MARCWR0H8';
+  const coupon = providerData.couponCode;
 
   const handleCopy = async () => {
+    if (!coupon) return;
     await copyAffiliateCoupon(coupon);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
 
   const targetUrl = customUrl || providerData.affiliateUrl;
+
+  const isBluehost = normalizedProviderKey === 'bluehost';
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
@@ -40,7 +43,11 @@ export const AffiliateModal: React.FC<AffiliateModalProps> = ({
         aria-modal="true"
       >
         {/* Header accent strip */}
-        <div className="bg-gradient-to-r from-sky-600 to-indigo-600 px-6 py-4 text-white flex items-center justify-between">
+        <div className={`px-6 py-4 text-white flex items-center justify-between ${
+          isBluehost 
+            ? 'bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800'
+            : 'bg-gradient-to-r from-sky-600 to-indigo-600'
+        }`}>
           <div className="flex items-center gap-2">
             <Zap className="w-5 h-5 text-amber-300" />
             <h3 className="font-bold text-base font-display">
@@ -58,14 +65,18 @@ export const AffiliateModal: React.FC<AffiliateModalProps> = ({
 
         <div className="p-6 space-y-5">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
-              Limited-Time Developer Discount
+            <span className={`text-xs font-semibold uppercase tracking-wider ${
+              isBluehost ? 'text-blue-600' : 'text-emerald-600'
+            }`}>
+              {isBluehost ? 'WordPress.org Recommended Partner' : 'Limited-Time Developer Discount'}
             </span>
             <h4 className="text-xl font-bold text-slate-900 mt-1">
               {providerData.discountText}
             </h4>
             <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
-              {normalizedProviderKey === 'hostinger' 
+              {isBluehost
+                ? 'Activating the verified Bluehost partner rate ($2.95/mo) with 1-click WordPress install, free domain name, and 24/7 expert WordPress support.'
+                : normalizedProviderKey === 'hostinger' 
                 ? 'Activating the highest verified discount tier for Hostinger LiteSpeed Cloud & WordPress hosting plans.'
                 : normalizedProviderKey === 'contabo'
                 ? 'High-performance German Cloud VPS with 8 GB RAM and dedicated resources.'
@@ -73,8 +84,8 @@ export const AffiliateModal: React.FC<AffiliateModalProps> = ({
             </p>
           </div>
 
-          {/* Exclusive Coupon Code Box */}
-          {providerData.couponCode && (
+          {/* Exclusive Coupon Code Box or Auto-Applied Link Box */}
+          {providerData.couponCode ? (
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 flex items-center justify-between">
               <div>
                 <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
@@ -102,13 +113,20 @@ export const AffiliateModal: React.FC<AffiliateModalProps> = ({
                 )}
               </button>
             </div>
+          ) : (
+            <div className="bg-blue-50/70 border border-blue-200/80 rounded-xl p-4 flex items-center gap-3">
+              <ShieldCheck className="w-5 h-5 text-blue-600 shrink-0" />
+              <div className="text-xs text-blue-900 leading-relaxed">
+                <strong>Automatic Partner Activation:</strong> The $2.95/mo partner discount and free domain are automatically applied at checkout via our verified referral link. No manual coupon code required.
+              </div>
+            </div>
           )}
 
           {/* Included Features List */}
           <div className="space-y-2 text-xs text-slate-600">
-            {providerData.features.slice(0, 3).map((feat, idx) => (
+            {providerData.features.slice(0, 4).map((feat, idx) => (
               <div key={idx} className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+                <ShieldCheck className={`w-4 h-4 shrink-0 ${isBluehost ? 'text-blue-600' : 'text-emerald-600'}`} />
                 <span>{feat}</span>
               </div>
             ))}
@@ -121,7 +139,11 @@ export const AffiliateModal: React.FC<AffiliateModalProps> = ({
               target="_blank"
               rel="noopener noreferrer"
               onClick={onClose}
-              className="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl text-center flex items-center justify-center gap-2 shadow-sm hover:shadow transition-all"
+              className={`w-full py-3 px-4 text-white font-semibold rounded-xl text-center flex items-center justify-center gap-2 shadow-sm hover:shadow transition-all ${
+                isBluehost
+                  ? 'bg-blue-600 hover:bg-blue-700'
+                  : 'bg-emerald-600 hover:bg-emerald-700'
+              }`}
             >
               <span>Continue to {providerData.name} with Deal</span>
               <ExternalLink className="w-4 h-4" />

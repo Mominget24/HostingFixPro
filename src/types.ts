@@ -1,5 +1,8 @@
 export type PageId = 
   | 'home' 
+  | 'tutorials'
+  | 'reviews'
+  | 'use-cases'
   | 'comparisons' 
   | 'migration-guide' 
   | 'tools' 
