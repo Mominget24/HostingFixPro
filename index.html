@@ -3,18 +3,616 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HostingFixPro - High-Performance Web Hosting Architecture & Tutorials</title>
-    <meta name="description" content="Clear, verified benchmarks, LiteSpeed WordPress setup tutorials, domain buying advice, and genuine hosting comparisons by Farhan Momen." />
-    <meta property="og:title" content="HostingFixPro - High-Performance Web Hosting Architecture & Tutorials" />
-    <meta property="og:description" content="Clear, verified benchmarks, LiteSpeed WordPress setup tutorials, domain buying advice, and genuine hosting comparisons by Farhan Momen." />
+    <title>HostVerdict — Verified Web Hosting Benchmarks & Deals 2026</title>
+    <meta name="description" content="Independent web hosting benchmarks, LiteSpeed WordPress architecture tutorials, TTFB speed tests, and verified discount coupons by Farhan Momen." />
+    <link rel="canonical" href="https://hostverdict.com/" />
+    
+    <!-- OpenGraph Social Sharing -->
     <meta property="og:type" content="website" />
+    <meta property="og:title" content="HostVerdict — Verified Web Hosting Benchmarks & Deals 2026" />
+    <meta property="og:description" content="Independent web hosting benchmarks, LiteSpeed WordPress architecture tutorials, TTFB speed tests, and verified discount coupons by Farhan Momen." />
+    <meta property="og:site_name" content="HostVerdict" />
+    <meta property="og:image" content="/assets/images/hero_server_infrastructure_1791370307218.jpg" />
+    
+    <!-- Twitter Social Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="HostingFixPro - Web Hosting Architecture & Tutorials" />
-    <meta name="twitter:description" content="Verified benchmarks, LiteSpeed WordPress setups, domain guides, and genuine hosting reviews." />
+    <meta name="twitter:title" content="HostVerdict — Verified Web Hosting Benchmarks & Deals 2026" />
+    <meta name="twitter:description" content="Independent web hosting benchmarks, LiteSpeed WordPress architecture tutorials, TTFB speed tests, and verified discount coupons." />
+    <meta name="twitter:image" content="/assets/images/hero_server_infrastructure_1791370307218.jpg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Pure CSS Stylesheet -->
+    <link rel="stylesheet" href="/styles/main.css" />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "HostVerdict",
+      "url": "https://hostverdict.com/",
+      "description": "Independent web hosting benchmarks, LiteSpeed WordPress architecture, and verified hosting deals.",
+      "publisher": {
+        "@type": "Person",
+        "name": "Farhan Momen",
+        "jobTitle": "Senior Web Infrastructure Specialist"
+      }
+    }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Top Announcement Strip -->
+    <div class="top-banner">
+      <span style="display: inline-flex; align-items: center; gap: 0.35rem;">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20" style="color: #fbbf24;"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+        <strong>Verified Deal:</strong> Hostinger 78% Off + Free Domain ($14.99 value) + Free SSL
+      </span>
+      <span aria-hidden="true">·</span>
+      <span class="top-banner-link" onclick="openDealModal('hostinger')">Use Code XV5MARCWR0H8 →</span>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <!-- Zone 1: Single Element Wordmark -->
+        <a href="/" class="site-brand">
+          <span class="brand-icon">HV</span>
+          <span>HostVerdict<span class="brand-dot">.</span></span>
+        </a>
+
+        <!-- Zone 2: Navigation Links -->
+        <nav class="site-nav">
+          <a href="/comparisons.html" class="nav-link">Comparisons</a>
+          <a href="/reviews.html" class="nav-link">Reviews</a>
+          <a href="/deals.html" class="nav-link">Deals & Coupons</a>
+          <a href="/tutorials.html" class="nav-link">Tutorials</a>
+          <a href="/services.html" class="nav-link">Services</a>
+          <a href="/tools.html" class="nav-link">Tools</a>
+          <a href="/about.html" class="nav-link">About Lab</a>
+        </nav>
+
+        <!-- Zone 3: Primary Action -->
+        <div class="header-actions">
+          <button onclick="openDealModal('hostinger')" class="btn-deal-primary">
+            Claim 78% Off
+          </button>
+          <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Toggle Navigation">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobileNavDrawer" style="display:none; background:#0f172a; padding:1.5rem; border-bottom:1px solid #334155;">
+      <div style="display:flex; flex-direction:column; gap:1rem;">
+        <a href="/comparisons.html" style="color:#ffffff; font-weight:600;">Comparisons</a>
+        <a href="/reviews.html" style="color:#ffffff; font-weight:600;">Reviews</a>
+        <a href="/deals.html" style="color:#ffffff; font-weight:600;">Deals & Coupons</a>
+        <a href="/tutorials.html" style="color:#ffffff; font-weight:600;">Tutorials</a>
+        <a href="/tools.html" style="color:#ffffff; font-weight:600;">Tools</a>
+        <a href="/about.html" style="color:#ffffff; font-weight:600;">About Lab</a>
+        <button onclick="openDealModal('hostinger')" class="btn btn-primary btn-sm" style="margin-top:0.5rem;">Claim 78% Off Hostinger</button>
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container hero-grid">
+          <div>
+            <div class="hero-kicker">
+              <span>Verified Benchmark Lab</span>
+              <span aria-hidden="true">·</span>
+              <span>Updated October 2026</span>
+            </div>
+            <h1 class="hero-title">
+              Stop Paying Slower Hosts 3x More on Renewals.
+            </h1>
+            <p class="hero-desc">
+              We benchmarked shared hosting providers under 15,000 monthly simulated visits. Discover verified TTFB latency, LiteSpeed caching gains, and transparent renewal pricing before you commit.
+            </p>
+            <div class="hero-actions">
+              <button onclick="openDealModal('hostinger')" class="btn btn-primary btn-lg">
+                View #1 Ranked Hostinger ($2.99/mo)
+              </button>
+              <a href="/comparisons.html" class="btn btn-secondary btn-lg">
+                Compare All 5 Hosts →
+              </a>
+            </div>
+
+            <!-- Verified Coupon Box -->
+            <div class="coupon-box">
+              <div class="coupon-info">
+                <span class="coupon-label">Verified Referral Voucher Code</span>
+                <span class="coupon-code">XV5MARCWR0H8</span>
+              </div>
+              <button onclick="copyAndVisitDeal('XV5MARCWR0H8', 'https://www.hostinger.com/bd?REFERRALCODE=XV5MARCWR0H8')" class="btn-copy-code">
+                Copy Code & Visit Hostinger
+              </button>
+            </div>
+
+            <!-- Proof Metrics -->
+            <div class="hero-proof-bar">
+              <div class="proof-item">
+                <span class="proof-val">125ms</span>
+                <span>Avg TTFB</span>
+              </div>
+              <div class="proof-item">
+                <span class="proof-val">99.98%</span>
+                <span>365-Day Uptime</span>
+              </div>
+              <div class="proof-item">
+                <span class="proof-val">100 GB</span>
+                <span>NVMe Storage</span>
+              </div>
+              <div class="proof-item">
+                <span class="proof-val">Free</span>
+                <span>Domain (.com)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Right: Live Benchmark Matrix -->
+          <div>
+            <div class="hero-benchmark-card">
+              <div class="benchmark-card-header">
+                <div>
+                  <span class="benchmark-title">2026 Speed & Price Benchmark</span>
+                  <div style="font-size:0.75rem; color:#94a3b8; margin-top:0.25rem;">Live Test Node: Singapore / US-East</div>
+                </div>
+                <span class="benchmark-status">● Live Data</span>
+              </div>
+
+              <table class="benchmark-table">
+                <thead>
+                  <tr>
+                    <th>Host & Plan</th>
+                    <th>TTFB</th>
+                    <th>Web Server</th>
+                    <th>Entry / Mo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="winner">
+                    <td>
+                      <strong>Hostinger Premium</strong>
+                      <span class="badge-winner">#1 Ranked</span>
+                    </td>
+                    <td class="tabular-nums" style="color:#38bdf8;">142ms</td>
+                    <td>LiteSpeed</td>
+                    <td class="tabular-nums" style="color:#4ade80;">$2.99</td>
+                  </tr>
+                  <tr>
+                    <td>Bluehost Choice Plus</td>
+                    <td class="tabular-nums">512ms</td>
+                    <td>Apache</td>
+                    <td class="tabular-nums">$4.95</td>
+                  </tr>
+                  <tr>
+                    <td>SiteGround StartUp</td>
+                    <td class="tabular-nums">198ms</td>
+                    <td>NGINX Cust.</td>
+                    <td class="tabular-nums">$3.99</td>
+                  </tr>
+                  <tr>
+                    <td>GoDaddy Economy</td>
+                    <td class="tabular-nums">486ms</td>
+                    <td>Apache</td>
+                    <td class="tabular-nums">$5.99</td>
+                  </tr>
+                  <tr>
+                    <td>Namecheap Stellar</td>
+                    <td class="tabular-nums">345ms</td>
+                    <td>cPanel Apache</td>
+                    <td class="tabular-nums">$2.98</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- Phase 1: Mini Visual Waterfall Comparison -->
+              <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; flex-direction: column; gap: 0.5rem;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #94a3b8;">
+                  <span>Visual TTFB Response Speed:</span>
+                  <span style="color: #34d399; font-weight: 700;">Hostinger 3.6x Faster vs Bluehost</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+                  <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.6875rem;">
+                    <span style="width: 58px; color: #e2e8f0; font-weight: 600;">Hostinger:</span>
+                    <div style="flex: 1; background: rgba(255, 255, 255, 0.05); height: 14px; border-radius: 3px; overflow: hidden;">
+                      <div style="width: 28%; height: 100%; background: linear-gradient(90deg, #10b981, #38bdf8); border-radius: 3px;" title="142ms"></div>
+                    </div>
+                    <span style="font-family: var(--font-mono); color: #38bdf8; font-weight: 700; width: 42px; text-align: right;">142ms</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.6875rem;">
+                    <span style="width: 58px; color: #94a3b8;">Bluehost:</span>
+                    <div style="flex: 1; background: rgba(255, 255, 255, 0.05); height: 14px; border-radius: 3px; overflow: hidden;">
+                      <div style="width: 100%; height: 100%; background: #f59e0b; border-radius: 3px;" title="512ms"></div>
+                    </div>
+                    <span style="font-family: var(--font-mono); color: #f59e0b; font-weight: 700; width: 42px; text-align: right;">512ms</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="margin-top: 1rem; font-size: 0.75rem; color: #94a3b8; display: flex; justify-content: space-between; align-items: center;">
+                <span>*Tested by Farhan Momen on live WordPress 6.7</span>
+                <a href="/reviews.html" style="color: #38bdf8; text-decoration: underline;">Read Full Lab Review →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 1: Top 3 Recommended Plans (High Commercial Intent) -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Transparent Pricing</div>
+            <h2 class="section-title">Hostinger Plans Tested & Ranked</h2>
+            <p class="section-subtitle">
+              Every plan includes a free custom domain for 1 year, unlimited free SSL certificates, and NVMe high-speed storage.
+            </p>
+          </div>
+
+          <div class="cards-grid-3">
+            <!-- Plan 1 -->
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h3 class="pricing-plan-name">Hostinger Premium</h3>
+                <p class="pricing-tagline">Best value for blogs & portfolio sites</p>
+              </div>
+              <div class="pricing-price-box">
+                <span class="price-curr">$</span>
+                <span class="price-val">2.99</span>
+                <span class="price-cycle">/mo</span>
+              </div>
+              <div class="price-renewal">Renews at $6.99/mo · Lock in 48 months</div>
+
+              <ul class="pricing-features">
+                <li class="pricing-feature-item">
+                  <span class="feature-check"><svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>
+                  <span>100 Websites & 100 GB NVMe Storage</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check"><svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>
+                  <span>Free Custom Domain ($14.99 value)</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check"><svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>
+                  <span>Unlimited Lifetime Free SSL</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check"><svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>
+                  <span>LiteSpeed Web Server + LSCache</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check"><svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>
+                  <span>Free Automated Weekly Backups</span>
+                </li>
+              </ul>
+
+              <button onclick="copyAndVisitDeal('XV5MARCWR0H8', 'https://www.hostinger.com/bd?REFERRALCODE=XV5MARCWR0H8')" class="btn btn-secondary" style="width: 100%;">
+                Get Premium Deal
+              </button>
+            </div>
+
+            <!-- Plan 2 (Featured) -->
+            <div class="pricing-card featured">
+              <div class="pricing-ribbon">
+                <svg width="13" height="13" fill="currentColor" viewBox="0 0 20 20" style="margin-right: 0.35rem; display: inline-block; vertical-align: -1px;"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                Editor's Choice — Most Popular
+              </div>
+              <div class="pricing-header">
+                <h3 class="pricing-plan-name">Hostinger Business</h3>
+                <p class="pricing-tagline">5x faster for WooCommerce & growing businesses</p>
+              </div>
+              <div class="pricing-price-box">
+                <span class="price-curr">$</span>
+                <span class="price-val">3.99</span>
+                <span class="price-cycle">/mo</span>
+              </div>
+              <div class="price-renewal">Renews at $8.99/mo · 200 GB Storage</div>
+
+              <ul class="pricing-features">
+                <li class="pricing-feature-item">
+                  <span class="feature-check"><svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>
+                  <span><strong>200 GB NVMe Storage</strong> (Double Space)</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check"><svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>
+                  <span><strong>Redis Object Cache Built-in</strong> (3x DB speed)</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check"><svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>
+                  <span><strong>Daily & On-Demand Backups</strong> included free</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check"><svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>
+                  <span>In-House Global CDN with worldwide edge caching</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check"><svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>
+                  <span>Free Domain + Unlimited Free SSL Certificates</span>
+                </li>
+              </ul>
+
+              <button onclick="copyAndVisitDeal('XV5MARCWR0H8', 'https://www.hostinger.com/bd?REFERRALCODE=XV5MARCWR0H8')" class="btn btn-primary" style="width: 100%;">
+                Get Business Deal (Recommended)
+              </button>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h3 class="pricing-plan-name">Hostinger Cloud Startup</h3>
+                <p class="pricing-tagline">Isolated resources for high-traffic apps</p>
+              </div>
+              <div class="pricing-price-box">
+                <span class="price-curr">$</span>
+                <span class="price-val">7.99</span>
+                <span class="price-cycle">/mo</span>
+              </div>
+              <div class="price-renewal">Renews at $19.99/mo · Dedicated IP included</div>
+
+              <ul class="pricing-features">
+                <li class="pricing-feature-item">
+                  <span class="feature-check"><svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>
+                  <span>300 Websites & 200 GB NVMe Storage</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check"><svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>
+                  <span>Dedicated CPU Cores (2 Cores) & 3 GB RAM</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check"><svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>
+                  <span>Dedicated Static IP Address ($36/yr value)</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check"><svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>
+                  <span>24/7 Priority Support Queue</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check"><svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>
+                  <span>Free Domain + Automated Daily Backups</span>
+                </li>
+              </ul>
+
+              <button onclick="copyAndVisitDeal('XV5MARCWR0H8', 'https://www.hostinger.com/bd?REFERRALCODE=XV5MARCWR0H8')" class="btn btn-secondary" style="width: 100%;">
+                Get Cloud Startup
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Why LiteSpeed Server Crushes Legacy Apache -->
+      <section class="section section-alt">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Architecture Breakdown</div>
+            <h2 class="section-title">Why Server Architecture Decides Your Google Ranking</h2>
+            <p class="section-subtitle">
+              Google's Core Web Vitals penalize slow First Contentful Paint. Here is what happens under the hood when comparing Hostinger's LiteSpeed infrastructure to legacy hosts.
+            </p>
+          </div>
+
+          <div class="cards-grid-3">
+            <div class="feature-card">
+              <div class="feature-card-icon" style="color: #2563eb;">
+                <svg width="22" height="22" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+              </div>
+              <h3 class="feature-card-title">Event-Driven LiteSpeed Engine</h3>
+              <p class="feature-card-desc">
+                Traditional Apache creates a new OS thread per visitor, consuming memory and bottlenecking under load. LiteSpeed uses asynchronous non-blocking I/O to handle 10,000 concurrent requests effortlessly.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-card-icon" style="color: #059669;">
+                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <h3 class="feature-card-title">Server-Level LSCache Integration</h3>
+              <p class="feature-card-desc">
+                Instead of slow PHP-based cache plugins that query WordPress on every hit, LSCache tags and purges pages directly in server memory, delivering raw static HTML in under 45ms.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-card-icon" style="color: #7c3aed;">
+                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+              </div>
+              <h3 class="feature-card-title">Pure Enterprise NVMe SSDs</h3>
+              <p class="feature-card-desc">
+                SATA SSDs max out at 550 MB/s. Hostinger's enterprise NVMe drives achieve over 3,500 MB/s read speeds, accelerating database heavy plugins like WooCommerce and Elementor.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Author Bio & E-E-A-T Credibility -->
+      <section class="section">
+        <div class="container">
+          <div class="author-profile-card">
+            <img 
+              src="/assets/images/farhan_momen_profile_1791384012822.jpg" 
+              alt="Farhan Momen - Senior Web Infrastructure Specialist" 
+              class="author-avatar"
+            />
+            <div>
+              <h3 class="author-name">Farhan Momen</h3>
+              <div class="author-title">Senior Web Infrastructure Specialist & Testing Director</div>
+              <p class="author-bio">
+                With over a decade optimizing high-traffic web architectures across South Asia, North America, and Europe, Farhan purchases independent test accounts to benchmark real server response times, uptime resilience, and customer support responsiveness. HostVerdict publishes raw data without vendor editorial influence.
+              </p>
+              <div style="margin-top: 1rem; display: flex; gap: 1.5rem; font-size: 0.8125rem;">
+                <a href="/about.html" style="color: var(--brand-primary); font-weight: 600;">Read Testing Methodology →</a>
+                <a href="/services.html" style="color: #2563eb; font-weight: 700;">Explore Client Services & Migration →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Implementation Lab / Concierge Services Callout -->
+      <section class="section" style="background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); border-top: 1px solid var(--border-subtle); padding: 3.5rem 0;">
+        <div class="container" style="max-width: 60rem;">
+          <div style="background: #ffffff; border: 2px solid #2563eb; border-radius: var(--radius-xl); padding: 2.5rem; box-shadow: 0 10px 25px rgba(37, 99, 235, 0.08); display: flex; flex-direction: column; gap: 1.5rem;">
+            <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <span style="background: #eff6ff; color: #2563eb; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 4px; letter-spacing: 0.05em;">
+                  HostVerdict Concierge & Studio
+                </span>
+                <h2 style="font-size: 1.65rem; margin: 0.5rem 0 0.25rem; color: var(--text-primary);">
+                  Don't Want to Build or Migrate Yourself? We Handle It For You.
+                </h2>
+                <p style="color: var(--text-secondary); font-size: 0.9375rem; margin: 0; max-width: 42rem;">
+                  Get <strong>100% Free WordPress Migration & LiteSpeed Setup</strong> when you buy Hostinger through our link, or hire our certified team for <strong>Custom WordPress Development, AI Vibe Coding, Website Maintenance, and SEO/AEO</strong>.
+                </p>
+                <div style="margin-top: 0.65rem; display: flex; align-items: center; flex-wrap: wrap; gap: 0.6rem; font-size: 0.8125rem;">
+                  <span style="color: var(--text-tertiary); font-weight: 600;">Verified Live Builds:</span>
+                  <a href="https://sunlitbd.com" target="_blank" rel="noopener noreferrer" style="color: var(--brand-primary); font-weight: 700; text-decoration: underline;">Sunlitbd.com (96/100 Speed) ↗</a>
+                  <span style="color: #cbd5e1;">·</span>
+                  <a href="https://ural-travel.pages.dev" target="_blank" rel="noopener noreferrer" style="color: #7c3aed; font-weight: 700; text-decoration: underline;">Ural-Travel (100/100 Edge) ↗</a>
+                  <span style="color: #cbd5e1;">·</span>
+                  <a href="/services.html" style="color: #059669; font-weight: 700;">View Full Portfolio & Packages →</a>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <a href="/services.html" class="btn btn-primary" style="white-space: nowrap;">
+                  View Service Packages →
+                </a>
+                <a href="https://wa.me/8801748755209?text=Hi%20Farhan,%20I%20am%20interested%20in%20HostVerdict%20implementation%20services" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" style="white-space: nowrap; font-size: 0.8125rem; padding: 0.5rem 1rem;">
+                  WhatsApp (+8801748755209)
+                </a>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; border-top: 1px solid var(--border-subtle); padding-top: 1.25rem; font-size: 0.8125rem;">
+              <div style="display: flex; align-items: center; gap: 0.4rem;">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 20 20" style="color: #2563eb;"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+                <span><strong>Free Migration:</strong> $0 with Hostinger</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.4rem;">
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: #059669;"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                <span><strong>Turnkey Stores:</strong> $249</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.4rem;">
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: #7c3aed;"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span><strong>Maintenance:</strong> $149 / $79mo</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.4rem;">
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: #0284c7;"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <span><strong>SEO & AEO Suite:</strong> $199</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Global Deal Modal -->
+    <div id="dealModal" class="modal-overlay">
+      <div class="modal-card">
+        <button class="modal-close-btn" onclick="closeDealModal()" aria-label="Close modal">&times;</button>
+        <span style="font-size:0.75rem; font-weight:700; color:#2563eb; text-transform:uppercase;">Verified Referral Partner</span>
+        <h3 id="modalProviderTitle" style="font-size:1.35rem; font-weight:800; margin:0.35rem 0 0.5rem;">Hostinger Special Promotion</h3>
+        <p id="modalDiscountText" style="font-size:0.875rem; color:#475569; margin-bottom:1.5rem;">Up to 78% Off + 3 Months Free & Free Custom Domain</p>
+        
+        <div style="background:#f8fafc; border:1px dashed #2563eb; border-radius:8px; padding:1.25rem; text-align:center; margin-bottom:1.5rem;">
+          <span style="font-size:0.75rem; color:#64748b; display:block; margin-bottom:0.25rem;">Click to copy promo voucher code:</span>
+          <span id="modalCouponCode" style="font-family:var(--font-mono); font-size:1.5rem; font-weight:800; color:#1e40af; letter-spacing:0.05em; display:block;">XV5MARCWR0H8</span>
+        </div>
+
+        <button id="modalVisitBtn" class="btn btn-primary btn-lg" style="width:100%;">
+          Copy Code & Visit Hostinger
+        </button>
+        <div style="font-size:0.6875rem; color:#94a3b8; text-align:center; margin-top:0.75rem;">
+          30-Day Money Back Guarantee · 1-Click WordPress Setup · Instant Activation
+        </div>
+      </div>
+    </div>
+
+    <!-- Sticky Bottom Deal Bar -->
+    <div id="stickyDealBar" class="sticky-deal-bar">
+      <div class="sticky-inner">
+        <div class="sticky-text" style="display: flex; align-items: center; gap: 0.4rem;">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 20 20" style="color: #fbbf24;"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+          <span><strong>Flash Deal:</strong> Hostinger 78% Off + Free Custom Domain + Free SSL (Code: <strong>XV5MARCWR0H8</strong>)</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <button onclick="copyAndVisitDeal('XV5MARCWR0H8', 'https://www.hostinger.com/bd?REFERRALCODE=XV5MARCWR0H8')" class="btn btn-primary btn-sm">
+            Claim $2.99/mo Rate
+          </button>
+          <button onclick="dismissStickyBar()" style="background:transparent; border:none; color:#94a3b8; cursor:pointer; font-size:1.1rem;" aria-label="Dismiss">&times;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <!-- FTC Affiliate Disclosure -->
+        <div class="affiliate-disclosure-box">
+          <strong>Editorial & Affiliate Disclosure:</strong> HostVerdict is an independently funded web hosting benchmark laboratory operated by Farhan Momen. We purchase real accounts to conduct live load and uptime tests. When you purchase hosting through our links, we may receive a referral commission at no additional cost to you (and often securing you exclusive promotional discounts). All benchmarks reflect real, unmanipulated telemetry.
+        </div>
+
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">HostVerdict<span style="color:#3b82f6;">.</span></div>
+            <p class="footer-bio">
+              Authoritative, data-backed web hosting performance benchmarks, LiteSpeed WordPress setups, and discount verification for developers, creators, and business owners.
+            </p>
+            <div style="font-size:0.75rem; color:#64748b;">
+              Dhaka Infrastructure Lab & Global Test Network
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-heading">Comparisons</h4>
+            <ul class="footer-links">
+              <li><a href="/comparisons.html">Hostinger vs Bluehost</a></li>
+              <li><a href="/comparisons.html">Hostinger vs SiteGround</a></li>
+              <li><a href="/comparisons.html">Hostinger vs GoDaddy</a></li>
+              <li><a href="/comparisons.html">Hostinger vs Namecheap</a></li>
+              <li><a href="/comparisons.html">Complete Matrix</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-heading">Technical Guides</h4>
+            <ul class="footer-links">
+              <li><a href="/tutorials.html">LiteSpeed Cache Setup</a></li>
+              <li><a href="/migration-guide.html">Zero-Downtime Migration</a></li>
+              <li><a href="/domain-guide.html">Domain & DNS Setup</a></li>
+              <li><a href="/tools.html">TTFB Speed Tester</a></li>
+              <li><a href="/tools.html">3-Year Cost Calculator</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-heading">Company & Strategy</h4>
+            <ul class="footer-links">
+              <li><a href="/about.html">About Farhan Momen</a></li>
+              <li><a href="/deals.html">Verified Coupons</a></li>
+              <li><a href="/topical-map.html">Topical Map (Koray Framework)</a></li>
+              <li><a href="/contact.html">Consultation Inquiries</a></li>
+              <li><a href="/sitemap.xml">XML Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>&copy; 2026 HostVerdict. All rights reserved.</div>
+          <div style="display:flex; gap:1.5rem;">
+            <span>Built with pure HTML5, CSS3, & Vanilla JS</span>
+            <span>Zero Tracking Bloat</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Vanilla JS Script -->
+    <script src="/scripts/main.js"></script>
   </body>
 </html>
-

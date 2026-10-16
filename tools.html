@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Web Hosting Tools & Calculators — HostVerdict</title>
+    <meta name="description" content="Free interactive hosting calculators, domain search availability, TTFB speed diagnostic analyzer, and 30-second hosting plan quiz." />
+    <link rel="canonical" href="https://hostverdict.com/tools.html" />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Free Web Hosting Tools & Calculators — HostVerdict" />
+    <meta property="og:description" content="Calculate real hosting renewal costs, test TTFB speeds, and find your ideal hosting plan in 30 seconds." />
+    <meta property="og:site_name" content="HostVerdict" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css" />
+
+    <!-- Schema.org SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "HostVerdict Web Hosting Calculators & Tools",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <!-- Top Announcement Strip -->
+    <div class="top-banner">
+      <span style="display: inline-flex; align-items: center; gap: 0.35rem;"><svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20" style="color: #fbbf24;"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg><strong>Hostinger Special:</strong> 78% Off + Free Domain + Free Lifetime SSL</span>
+      <span aria-hidden="true">·</span>
+      <span class="top-banner-link" onclick="openDealModal('hostinger')">Claim Deal →</span>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="site-brand">
+          <span class="brand-icon">HV</span>
+          <span>HostVerdict<span class="brand-dot">.</span></span>
+        </a>
+        <nav class="site-nav">
+          <a href="/comparisons.html" class="nav-link">Comparisons</a>
+          <a href="/reviews.html" class="nav-link">Reviews</a>
+          <a href="/deals.html" class="nav-link">Deals & Coupons</a>
+          <a href="/tutorials.html" class="nav-link">Tutorials</a>
+          <a href="/services.html" class="nav-link">Services</a>
+          <a href="/tools.html" class="nav-link active">Tools</a>
+          <a href="/use-cases.html" class="nav-link">Use Cases</a>
+          <a href="/about.html" class="nav-link">About Lab</a>
+        </nav>
+        <div class="header-actions">
+          <button onclick="openDealModal('hostinger')" class="btn-deal-primary">
+            Claim 78% Off
+          </button>
+          <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Toggle Navigation">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container" style="max-width: 56rem;">
+        <div class="section-header">
+          <div class="section-kicker">Free Architecture Utilities</div>
+          <h1 class="section-title">Web Hosting Calculators & Diagnostic Tools</h1>
+          <p class="section-subtitle">
+            Zero sign-up required. Calculate hidden renewal price hikes, test server TTFB response times, check custom domain availability, and get an instant plan recommendation.
+          </p>
+        </div>
+
+        <!-- Tool 1: 3-Year True Cost & Renewal Calculator -->
+        <div class="tool-container">
+          <div class="tool-header">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h2 class="tool-header-title">1. 3-Year True Cost & Renewal Calculator</h2>
+              <span style="font-size:0.75rem; color:#2563eb; font-weight:700;">Exposes Hidden Upsells</span>
+            </div>
+            <p class="tool-header-desc">
+              Compare what you actually pay over 1, 2, 3, or 4 years between Hostinger and legacy hosts charging hidden SSL fees and 300% renewal rate hikes.
+            </p>
+          </div>
+
+          <!-- Controls -->
+          <div class="calc-controls-grid">
+            <div>
+              <label style="font-size:0.8125rem; font-weight:700; color:var(--text-secondary); display:block; margin-bottom:0.5rem;">
+                Step 1: Select Hosting Tier
+              </label>
+              <div style="display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary btn-sm tier-pill active" data-tier="premium" onclick="selectTier('premium')">
+                  Premium ($2.99)
+                </button>
+                <button type="button" class="btn btn-secondary btn-sm tier-pill" data-tier="business" onclick="selectTier('business')">
+                  Business ($3.99)
+                </button>
+                <button type="button" class="btn btn-secondary btn-sm tier-pill" data-tier="cloud" onclick="selectTier('cloud')">
+                  Cloud ($7.99)
+                </button>
+              </div>
+
+              <label style="font-size:0.8125rem; font-weight:700; color:var(--text-secondary); display:block; margin:1.25rem 0 0.5rem;">
+                Step 2: Choose Term Duration
+              </label>
+              <div style="display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary btn-sm duration-pill" data-years="1" onclick="selectDuration(1)">1 Year</button>
+                <button type="button" class="btn btn-secondary btn-sm duration-pill" data-years="2" onclick="selectDuration(2)">2 Years</button>
+                <button type="button" class="btn btn-secondary btn-sm duration-pill active" data-years="3" onclick="selectDuration(3)">3 Years</button>
+                <button type="button" class="btn btn-secondary btn-sm duration-pill" data-years="4" onclick="selectDuration(4)">4 Years</button>
+              </div>
+            </div>
+
+            <!-- Calculation Result Panel -->
+            <div class="calc-result-panel">
+              <div>
+                <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:0.25rem;" id="calcPlanLabel">
+                  Hostinger Premium (3 Years Locked)
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.75rem;">
+                  <span style="font-size:0.875rem; color:var(--text-secondary);">Hostinger Total:</span>
+                  <span id="calcHostingerTotal" style="font-family:var(--font-mono); font-size:1.5rem; font-weight:800; color:#16a34a;">$107.64</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.75rem;">
+                  <span style="font-size:0.875rem; color:var(--text-secondary);">Legacy Competitor Total:</span>
+                  <span id="calcCompetitorTotal" style="font-family:var(--font-mono); font-size:1.15rem; font-weight:700; color:#e11d48;">$579.14</span>
+                </div>
+              </div>
+
+              <div style="padding-top:1rem; border-top:1px solid var(--border-default);">
+                <div id="calcSavings" style="font-size:0.875rem; font-weight:700; color:#2563eb; margin-bottom:0.75rem;">
+                  Save $471.50 (81%)
+                </div>
+                <button onclick="copyAndVisitDeal('XV5MARCWR0H8', 'https://www.hostinger.com/bd?REFERRALCODE=XV5MARCWR0H8')" class="btn btn-primary btn-sm" style="width:100%;">
+                  Lock in Lowest Rate Now →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tool 2: 30-Second Hosting Recommendation Quiz -->
+        <div class="tool-container">
+          <div class="tool-header">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h2 class="tool-header-title">2. 30-Second Hosting Recommendation Quiz</h2>
+              <span style="font-size:0.75rem; color:#2563eb; font-weight:700;">Personalized Architecture Match</span>
+            </div>
+            <p class="tool-header-desc">
+              Answer 3 simple questions to determine the optimal configuration for your web project.
+            </p>
+          </div>
+
+          <!-- Step 1 -->
+          <div id="quizStep1" class="quiz-step active">
+            <span style="font-size:0.8125rem; font-weight:700; color:var(--brand-primary);">Question 1 of 3</span>
+            <h3 style="font-size:1.15rem; margin:0.35rem 0;">What type of website are you building or migrating?</h3>
+            <div class="quiz-options-grid">
+              <div class="quiz-option-card selected" onclick="setQuizAnswer('project', 'blog', this)">
+                <strong style="display:block; font-size:0.9375rem; margin-bottom:0.25rem;">Blog or Portfolio</strong>
+                <span style="font-size:0.75rem; color:var(--text-muted);">Personal brand, article publishing, or creative showcase.</span>
+              </div>
+              <div class="quiz-option-card" onclick="setQuizAnswer('project', 'store', this)">
+                <strong style="display:block; font-size:0.9375rem; margin-bottom:0.25rem;">E-Commerce Store</strong>
+                <span style="font-size:0.75rem; color:var(--text-muted);">WooCommerce, Shopify alternative, online product checkout.</span>
+              </div>
+              <div class="quiz-option-card" onclick="setQuizAnswer('project', 'agency', this)">
+                <strong style="display:block; font-size:0.9375rem; margin-bottom:0.25rem;">Agency / Multi-Site</strong>
+                <span style="font-size:0.75rem; color:var(--text-muted);">Hosting multiple client websites under one unified cPanel/hPanel.</span>
+              </div>
+            </div>
+            <div style="margin-top:1.5rem; text-align:right;">
+              <button onclick="nextQuizStep(2)" class="btn btn-primary">Next Step →</button>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div id="quizStep2" class="quiz-step">
+            <span style="font-size:0.8125rem; font-weight:700; color:var(--brand-primary);">Question 2 of 3</span>
+            <h3 style="font-size:1.15rem; margin:0.35rem 0;">What is your expected monthly traffic volume?</h3>
+            <div class="quiz-options-grid">
+              <div class="quiz-option-card selected" onclick="setQuizAnswer('traffic', 'low', this)">
+                <strong style="display:block; font-size:0.9375rem; margin-bottom:0.25rem;">Under 15,000 Visits</strong>
+                <span style="font-size:0.75rem; color:var(--text-muted);">New launch, niche blog, or local business site.</span>
+              </div>
+              <div class="quiz-option-card" onclick="setQuizAnswer('traffic', 'high', this)">
+                <strong style="display:block; font-size:0.9375rem; margin-bottom:0.25rem;">15,000 – 60,000 Visits</strong>
+                <span style="font-size:0.75rem; color:var(--text-muted);">Growing audience, regular promotional spikes.</span>
+              </div>
+              <div class="quiz-option-card" onclick="setQuizAnswer('traffic', 'enterprise', this)">
+                <strong style="display:block; font-size:0.9375rem; margin-bottom:0.25rem;">60,000+ Visits / SaaS</strong>
+                <span style="font-size:0.75rem; color:var(--text-muted);">High concurrency, busy cart transactions, heavy APIs.</span>
+              </div>
+            </div>
+            <div style="margin-top:1.5rem; display:flex; justify-content:space-between;">
+              <button onclick="nextQuizStep(1)" class="btn btn-secondary">← Back</button>
+              <button onclick="nextQuizStep(3)" class="btn btn-primary">Next Step →</button>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div id="quizStep3" class="quiz-step">
+            <span style="font-size:0.8125rem; font-weight:700; color:var(--brand-primary);">Question 3 of 3</span>
+            <h3 style="font-size:1.15rem; margin:0.35rem 0;">What is your primary architectural priority?</h3>
+            <div class="quiz-options-grid">
+              <div class="quiz-option-card selected" onclick="setQuizAnswer('priority', 'value', this)">
+                <strong style="display:block; font-size:0.9375rem; margin-bottom:0.25rem;">Lowest Upfront Cost</strong>
+                <span style="font-size:0.75rem; color:var(--text-muted);">Max savings with free domain and reliable uptime.</span>
+              </div>
+              <div class="quiz-option-card" onclick="setQuizAnswer('priority', 'speed', this)">
+                <strong style="display:block; font-size:0.9375rem; margin-bottom:0.25rem;">Sub-Second Speed</strong>
+                <span style="font-size:0.75rem; color:var(--text-muted);">LiteSpeed caching, NVMe drives, and Redis acceleration.</span>
+              </div>
+              <div class="quiz-option-card" onclick="setQuizAnswer('priority', 'backups', this)">
+                <strong style="display:block; font-size:0.9375rem; margin-bottom:0.25rem;">Automated Security</strong>
+                <span style="font-size:0.75rem; color:var(--text-muted);">Daily backups, staging environment, automated restore.</span>
+              </div>
+            </div>
+            <div style="margin-top:1.5rem; display:flex; justify-content:space-between;">
+              <button onclick="nextQuizStep(2)" class="btn btn-secondary">← Back</button>
+              <button onclick="nextQuizStep(4)" class="btn btn-primary">Generate Match Results →</button>
+            </div>
+          </div>
+
+          <!-- Step 4: Result -->
+          <div id="quizStep4" class="quiz-step">
+            <div id="quizResultCard"></div>
+          </div>
+        </div>
+
+        <!-- Tool 3: Live TTFB Speed Diagnostic Simulator -->
+        <div class="tool-container">
+          <div class="tool-header">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h2 class="tool-header-title">3. Global TTFB & Server Diagnostic Simulator</h2>
+              <span style="font-size:0.75rem; color:#2563eb; font-weight:700;">Core Web Vitals Test</span>
+            </div>
+            <p class="tool-header-desc">
+              Test your current domain response times against our global test network to evaluate server bottlenecking.
+            </p>
+          </div>
+
+          <form onsubmit="runSpeedTest(event)" class="input-group">
+            <input type="text" id="speedUrlInput" class="input-text" placeholder="Enter your website domain (e.g. yoursite.com)" />
+            <button type="submit" class="btn btn-primary">Run TTFB Diagnostic</button>
+          </form>
+
+          <div id="speedResults" class="speed-results-box" style="display:none;"></div>
+        </div>
+
+        <!-- Tool 4: Domain Name & Free TLD Checker -->
+        <div class="tool-container">
+          <div class="tool-header">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h2 class="tool-header-title">4. Domain Availability & Free TLD Voucher Checker</h2>
+              <span style="font-size:0.75rem; color:#059669; font-weight:700;">100% Free Domain Perk</span>
+            </div>
+            <p class="tool-header-desc">
+              Check custom domain availability and see which extensions (.com, .net, .org, .online) you can claim free with Hostinger.
+            </p>
+          </div>
+
+          <form onsubmit="runDomainCheck(event)" class="input-group">
+            <input type="text" id="domainInput" class="input-text" placeholder="Search domain ideas (e.g., mystore, devportfolio)" />
+            <button type="submit" class="btn btn-primary">Check Availability</button>
+          </form>
+
+          <div id="domainResults"></div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Global Deal Modal -->
+    <div id="dealModal" class="modal-overlay">
+      <div class="modal-card">
+        <button class="modal-close-btn" onclick="closeDealModal()" aria-label="Close modal">&times;</button>
+        <span style="font-size:0.75rem; font-weight:700; color:#2563eb; text-transform:uppercase;">Verified Referral Partner</span>
+        <h3 id="modalProviderTitle" style="font-size:1.35rem; font-weight:800; margin:0.35rem 0 0.5rem;">Hostinger Special Promotion</h3>
+        <p id="modalDiscountText" style="font-size:0.875rem; color:#475569; margin-bottom:1.5rem;">Up to 78% Off + 3 Months Free & Free Custom Domain</p>
+        
+        <div style="background:#f8fafc; border:1px dashed #2563eb; border-radius:8px; padding:1.25rem; text-align:center; margin-bottom:1.5rem;">
+          <span style="font-size:0.75rem; color:#64748b; display:block; margin-bottom:0.25rem;">Click to copy promo voucher code:</span>
+          <span id="modalCouponCode" style="font-family:var(--font-mono); font-size:1.5rem; font-weight:800; color:#1e40af; letter-spacing:0.05em; display:block;">XV5MARCWR0H8</span>
+        </div>
+
+        <button id="modalVisitBtn" class="btn btn-primary btn-lg" style="width:100%;">
+          Copy Code & Visit Hostinger
+        </button>
+      </div>
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="affiliate-disclosure-box">
+          <strong>Editorial & Affiliate Disclosure:</strong> HostVerdict is an independently funded web hosting benchmark laboratory operated by Farhan Momen. When you purchase hosting through our links, we may receive a referral commission at no additional cost to you.
+        </div>
+        <div class="footer-bottom">
+          <div>&copy; 2026 HostVerdict. All rights reserved.</div>
+          <div><a href="/" style="color:#94a3b8;">Back to Home</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/scripts/main.js"></script>
+  </body>
+</html>

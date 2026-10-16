@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semantic SEO Topical Map — Koray Tuğberk Gübür Framework — HostVerdict</title>
+    <meta name="description" content="Interactive 22-node Semantic SEO Topical Map following Koray Tuğberk Gübür's Holistic SEO methodology. Explore Central Entities, Source Context, search intent vectors, and contextual linking bridges." />
+    <link rel="canonical" href="https://hostverdict.com/topical-map.html" />
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Semantic SEO Topical Map — Koray Tuğberk Gübür Framework — HostVerdict" />
+    <meta property="og:description" content="Explore HostVerdict's 22-node Semantic SEO content network, central entities, search intent hierarchy, and contextual internal linking bridges." />
+    <meta property="og:site_name" content="HostVerdict" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css" />
+
+    <style>
+      .topical-stat-strip {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+        background: #0f172a;
+        color: #ffffff;
+        border-radius: var(--radius-xl);
+        padding: 1.5rem 2rem;
+        margin-bottom: 2.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .stat-item {
+        text-align: center;
+      }
+      .stat-number {
+        font-family: var(--font-mono);
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: #38bdf8;
+      }
+      .stat-label {
+        font-size: 0.75rem;
+        color: #94a3b8;
+        margin-top: 0.25rem;
+      }
+      .filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .filter-btn {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-default);
+        color: var(--text-secondary);
+        padding: 0.4rem 0.85rem;
+        border-radius: var(--radius-md);
+        font-size: 0.8125rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+      }
+      .filter-btn:hover, .filter-btn.active {
+        background: #2563eb;
+        color: #ffffff;
+        border-color: #2563eb;
+      }
+      .node-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-xl);
+        padding: 1.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: var(--shadow-sm);
+        transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+      }
+      .node-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+        border-color: var(--border-default);
+      }
+      .intent-badge {
+        display: inline-block;
+        font-size: 0.6875rem;
+        font-weight: 700;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .intent-transactional { background: #fef3c7; color: #92400e; }
+      .intent-commercial { background: #dbeafe; color: #1e40af; }
+      .intent-informational { background: #dcfce7; color: #166534; }
+      @media (max-width: 900px) {
+        .topical-stat-strip { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Announcement Strip -->
+    <div class="top-banner">
+      <span style="display: inline-flex; align-items: center; gap: 0.35rem;"><svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20" style="color: #fbbf24;"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg><strong>Hostinger Special:</strong> 78% Off + Free Domain ($14.99 value) + Free Lifetime SSL</span>
+      <span aria-hidden="true">·</span>
+      <span class="top-banner-link" onclick="openDealModal('hostinger')">Claim Deal →</span>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="site-brand">
+          <span class="brand-icon">HV</span>
+          <span>HostVerdict<span class="brand-dot">.</span></span>
+        </a>
+        <nav class="site-nav">
+          <a href="/comparisons.html" class="nav-link">Comparisons</a>
+          <a href="/reviews.html" class="nav-link">Reviews</a>
+          <a href="/deals.html" class="nav-link">Deals & Coupons</a>
+          <a href="/tutorials.html" class="nav-link">Tutorials</a>
+          <a href="/tools.html" class="nav-link">Tools</a>
+          <a href="/about.html" class="nav-link">About Lab</a>
+        </nav>
+        <div class="header-actions">
+          <button onclick="openDealModal('hostinger')" class="btn-deal-primary">
+            Claim 78% Off
+          </button>
+          <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Toggle Navigation">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container-wide">
+        <!-- Hero Header -->
+        <div class="section-header" style="max-width: 52rem; margin-bottom: 2.5rem;">
+          <div class="section-kicker">Holistic Semantic SEO Architecture</div>
+          <h1 class="section-title">Koray Tuğberk Gübür Semantic Topical Map</h1>
+          <p class="section-subtitle">
+            Explore HostVerdict's comprehensive 22-node semantic knowledge graph. Built on Koray's principles of Source Context, Central Entity anchoring, macro-semantic coverage, and monodirectional internal linking bridges.
+          </p>
+        </div>
+
+        <!-- Telemetry Statistics Strip -->
+        <div class="topical-stat-strip">
+          <div class="stat-item">
+            <div class="stat-number">22</div>
+            <div class="stat-label">Total Semantic Nodes</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Central Entity (WP Hosting)</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">10</div>
+            <div class="stat-label">Core Section (Monetization)</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">12</div>
+            <div class="stat-label">Outer Section (Trust/Depth)</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Internal Link Coverage</div>
+          </div>
+        </div>
+
+        <!-- Semantic Principles Callout -->
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 2rem; margin-bottom: 3rem;">
+          <h2 style="font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--text-primary);">
+            How This Topical Map Establishes Unbreakable Topical Authority
+          </h2>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+            <div>
+              <strong style="color: var(--text-primary); display: block; margin-bottom: 0.25rem;">1. Defined Source Context</strong>
+              Our right to rank stems from independent hardware benchmarks and price transparency. We do not write surface-level opinions; we publish verifiable server telemetry.
+            </div>
+            <div>
+              <strong style="color: var(--text-primary); display: block; margin-bottom: 0.25rem;">2. Central Entity Anchoring</strong>
+              Every node directly enriches the central entity <code>WordPress Hosting</code> via attribute vectors (speed, caching, free domain bundling, and renewal pricing).
+            </div>
+            <div>
+              <strong style="color: var(--text-primary); display: block; margin-bottom: 0.25rem;">3. Monodirectional Link Flow</strong>
+              Informational child nodes link upward to commercial conversion hubs with diverse partial-match anchor texts, passing topical authority directly into high-converting pages.
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Search and Filter Controls -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+          <div class="filter-bar" id="clusterFilterBar">
+            <button class="filter-btn active" data-filter="all" onclick="filterNodes('all', this)">All Nodes (22)</button>
+            <button class="filter-btn" data-filter="hostinger" onclick="filterNodes('hostinger', this)">Hostinger Core (5)</button>
+            <button class="filter-btn" data-filter="comparisons" onclick="filterNodes('comparisons', this)">Comparisons Matrix (4)</button>
+            <button class="filter-btn" data-filter="server" onclick="filterNodes('server', this)">Server & Caching (5)</button>
+            <button class="filter-btn" data-filter="domain" onclick="filterNodes('domain', this)">Domain & Migration (5)</button>
+            <button class="filter-btn" data-filter="usecases" onclick="filterNodes('usecases', this)">Use Cases (3)</button>
+          </div>
+          <div style="min-width: 18rem;">
+            <input 
+              type="text" 
+              id="nodeSearchInput" 
+              class="input-text" 
+              placeholder="Search entities, keywords, or anchors..." 
+              oninput="searchNodes(this.value)"
+              style="width: 100%;"
+            />
+          </div>
+        </div>
+
+        <!-- Interactive Node Cards Grid -->
+        <div id="nodesGrid" class="cards-grid-3" style="margin-bottom: 4rem;">
+          <!-- Node cards rendered by JavaScript below -->
+        </div>
+
+        <!-- Documentation Reference Footer -->
+        <div style="background: #0f172a; color: #ffffff; border-radius: var(--radius-xl); padding: 2.25rem; text-align: center;">
+          <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #ffffff;">Need the Complete Markdown Blueprint?</h2>
+          <p style="color: #94a3b8; max-width: 36rem; margin: 0 auto 1.5rem; font-size: 0.9375rem;">
+            The complete 22-node semantic content network with full word counts, entity predicates, and linking rules is documented in <code>docs/topical-map.md</code>.
+          </p>
+          <a href="/docs/topical-map.md" target="_blank" class="btn btn-secondary">
+            View Structured Markdown File →
+          </a>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Global Deal Modal -->
+    <div id="dealModal" class="modal-overlay">
+      <div class="modal-card">
+        <button class="modal-close-btn" onclick="closeDealModal()" aria-label="Close modal">&times;</button>
+        <span style="font-size:0.75rem; font-weight:700; color:#2563eb; text-transform:uppercase;">Verified Referral Partner</span>
+        <h3 id="modalProviderTitle" style="font-size:1.35rem; font-weight:800; margin:0.35rem 0 0.5rem;">Hostinger Special Promotion</h3>
+        <p id="modalDiscountText" style="font-size:0.875rem; color:#475569; margin-bottom:1.5rem;">Up to 78% Off + 3 Months Free & Free Custom Domain</p>
+        
+        <div style="background:#f8fafc; border:1px dashed #2563eb; border-radius:8px; padding:1.25rem; text-align:center; margin-bottom:1.5rem;">
+          <span style="font-size:0.75rem; color:#64748b; display:block; margin-bottom:0.25rem;">Click to copy promo voucher code:</span>
+          <span id="modalCouponCode" style="font-family:var(--font-mono); font-size:1.5rem; font-weight:800; color:#1e40af; letter-spacing:0.05em; display:block;">XV5MARCWR0H8</span>
+        </div>
+
+        <button id="modalVisitBtn" class="btn btn-primary btn-lg" style="width:100%;">
+          Copy Code & Visit Hostinger
+        </button>
+      </div>
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="affiliate-disclosure-box">
+          <strong>Editorial & Affiliate Disclosure:</strong> HostVerdict is an independently funded web hosting benchmark laboratory operated by Farhan Momen. When you purchase hosting through our links, we may receive a referral commission at no additional cost to you.
+        </div>
+        <div class="footer-bottom">
+          <div>&copy; 2026 HostVerdict. All rights reserved.</div>
+          <div style="display:flex; gap:1.5rem;">
+            <a href="/" style="color:#94a3b8;">Home</a>
+            <a href="/deals.html" style="color:#94a3b8;">Deals</a>
+            <a href="/topical-map.html" style="color:#ffffff;">Topical Map</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/scripts/main.js"></script>
+    <script>
+      // 22-Node Semantic Content Network Data
+      const TOPICAL_NODES = [
+        {
+          id: "NODE 01",
+          title: "Hostinger Technical Review & Benchmarks",
+          cluster: "hostinger",
+          clusterLabel: "Core: Hostinger Ecosystem",
+          entityType: "Core Brand Entity",
+          intent: "commercial",
+          intentLabel: "Commercial Investigation",
+          keywords: "hostinger review 2026, is hostinger good, ttfb speed",
+          anchor: "Hostinger technical review",
+          passesTo: "Node 04 (Coupons), Node 02 (Plans)",
+          url: "/reviews.html"
+        },
+        {
+          id: "NODE 02",
+          title: "Hostinger Premium vs. Business Breakdown",
+          cluster: "hostinger",
+          clusterLabel: "Core: Hostinger Ecosystem",
+          entityType: "Plan Comparison Attribute",
+          intent: "commercial",
+          intentLabel: "Commercial Investigation",
+          keywords: "hostinger premium vs business, is business worth it",
+          anchor: "Hostinger Business plan with Redis",
+          passesTo: "Node 01 (Master Review), Node 12 (Redis)",
+          url: "/hostinger-premium-vs-business.html"
+        },
+        {
+          id: "NODE 03",
+          title: "Hostinger Cloud Startup Architecture",
+          cluster: "hostinger",
+          clusterLabel: "Core: Hostinger Ecosystem",
+          entityType: "High-Tier Plan Entity",
+          intent: "commercial",
+          intentLabel: "Commercial Investigation",
+          keywords: "hostinger cloud startup review, dedicated cpu ram",
+          anchor: "Hostinger Cloud Startup dedicated CPU",
+          passesTo: "Node 21 (Agency Use Case), Node 01 (Review)",
+          url: "/hostinger-cloud-startup.html"
+        },
+        {
+          id: "NODE 04",
+          title: "Verified Hostinger Coupon Codes & Discounts",
+          cluster: "hostinger",
+          clusterLabel: "Core: Hostinger Ecosystem",
+          entityType: "Transactional Discount Entity",
+          intent: "transactional",
+          intentLabel: "Transactional (Max Monetization)",
+          keywords: "hostinger coupon code 2026, hostinger promo voucher",
+          anchor: "verified Hostinger 78% discount code",
+          passesTo: "Official Referral Checkout",
+          url: "/deals.html"
+        },
+        {
+          id: "NODE 05",
+          title: "3-Year True Cost & Renewal Calculator",
+          cluster: "hostinger",
+          clusterLabel: "Core: Hostinger Ecosystem",
+          entityType: "Cost Optimization Utility",
+          intent: "commercial",
+          intentLabel: "Commercial / Tool",
+          keywords: "hostinger renewal calculator, hosting hidden costs",
+          anchor: "3-year hosting cost calculator",
+          passesTo: "Node 04 (Coupons), Node 06 (Comparisons)",
+          url: "/hosting-renewal-costs.html"
+        },
+        {
+          id: "NODE 06",
+          title: "Hostinger vs. Bluehost (LiteSpeed vs. Apache)",
+          cluster: "comparisons",
+          clusterLabel: "Core: Comparison Matrix",
+          entityType: "Competitor Entity Comparison",
+          intent: "commercial",
+          intentLabel: "Commercial Comparison",
+          keywords: "hostinger vs bluehost, bluehost apache vs litespeed",
+          anchor: "Hostinger vs Bluehost speed test",
+          passesTo: "Node 01 (Review), Node 10 (LiteSpeed)",
+          url: "/comparisons.html"
+        },
+        {
+          id: "NODE 07",
+          title: "Hostinger vs. SiteGround (Value & TTFB Parity)",
+          cluster: "comparisons",
+          clusterLabel: "Core: Comparison Matrix",
+          entityType: "Competitor Entity Comparison",
+          intent: "commercial",
+          intentLabel: "Commercial Comparison",
+          keywords: "hostinger vs siteground, siteground renewal alternative",
+          anchor: "Hostinger vs SiteGround renewal comparison",
+          passesTo: "Node 01 (Review), Node 05 (Calculator)",
+          url: "/comparisons.html"
+        },
+        {
+          id: "NODE 08",
+          title: "Hostinger vs. GoDaddy (Exposing the SSL Trap)",
+          cluster: "comparisons",
+          clusterLabel: "Core: Comparison Matrix",
+          entityType: "Competitor Entity Comparison",
+          intent: "commercial",
+          intentLabel: "Commercial Comparison",
+          keywords: "hostinger vs godaddy, godaddy ssl renewal trap",
+          anchor: "Hostinger vs GoDaddy pricing breakdown",
+          passesTo: "Node 22 (Free SSL), Node 04 (Coupons)",
+          url: "/comparisons.html"
+        },
+        {
+          id: "NODE 09",
+          title: "Hostinger vs. Namecheap (Multi-Domain Hosting)",
+          cluster: "comparisons",
+          clusterLabel: "Core: Comparison Matrix",
+          entityType: "Competitor Entity Comparison",
+          intent: "commercial",
+          intentLabel: "Commercial Comparison",
+          keywords: "hostinger vs namecheap, best cheap wordpress hosting",
+          anchor: "Hostinger vs Namecheap comparison",
+          passesTo: "Node 15 (Free Domain), Node 01 (Review)",
+          url: "/comparisons.html"
+        },
+        {
+          id: "NODE 10",
+          title: "LiteSpeed Web Server Architecture Guide",
+          cluster: "server",
+          clusterLabel: "Outer: Server & Caching",
+          entityType: "Server Engine Entity",
+          intent: "informational",
+          intentLabel: "Informational (Authority)",
+          keywords: "litespeed vs nginx vs apache, what is litespeed server",
+          anchor: "LiteSpeed server architecture",
+          passesTo: "Node 01 (Hostinger Review), Node 11 (LSCache)",
+          url: "/blog.html"
+        },
+        {
+          id: "NODE 11",
+          title: "LiteSpeed Cache (LSCache) WordPress Setup",
+          cluster: "server",
+          clusterLabel: "Outer: Server & Caching",
+          entityType: "Cache Software Entity",
+          intent: "informational",
+          intentLabel: "Informational / How-To",
+          keywords: "best litespeed cache settings wordpress, lscache plugin",
+          anchor: "LiteSpeed Cache setup guide",
+          passesTo: "Node 01 (Hostinger Review), Node 12 (Redis)",
+          url: "/tutorials.html"
+        },
+        {
+          id: "NODE 12",
+          title: "Redis Object Cache for WordPress Databases",
+          cluster: "server",
+          clusterLabel: "Outer: Server & Caching",
+          entityType: "In-Memory Database Entity",
+          intent: "informational",
+          intentLabel: "Informational / How-To",
+          keywords: "wordpress redis object cache hostinger, redis vs memcached",
+          anchor: "Redis Object Cache for WordPress",
+          passesTo: "Node 02 (Hostinger Business with Redis)",
+          url: "/tutorials.html"
+        },
+        {
+          id: "NODE 13",
+          title: "PHP 8.3 & OPcache Performance Tuning",
+          cluster: "server",
+          clusterLabel: "Outer: Server & Caching",
+          entityType: "Runtime Environment Entity",
+          intent: "informational",
+          intentLabel: "Informational / How-To",
+          keywords: "php 8.3 wordpress optimization, opcache memory limit",
+          anchor: "PHP 8.3 tuning in hPanel",
+          passesTo: "Node 11 (LSCache), Node 01 (Review)",
+          url: "/tutorials.html"
+        },
+        {
+          id: "NODE 14",
+          title: "Global TTFB Speed Measurement Methodology",
+          cluster: "server",
+          clusterLabel: "Outer: Server & Caching",
+          entityType: "E-E-A-T Telemetry Entity",
+          intent: "informational",
+          intentLabel: "Informational / E-E-A-T",
+          keywords: "what is good ttfb for wordpress, measure time to first byte",
+          anchor: "independent TTFB testing methodology",
+          passesTo: "Node 01 (Live Benchmarks), Node 05 (Tools)",
+          url: "/about.html"
+        },
+        {
+          id: "NODE 15",
+          title: "How to Claim Free Domain with Hosting Plans",
+          cluster: "domain",
+          clusterLabel: "Outer: Domain & Migration",
+          entityType: "Domain Bundling Attribute",
+          intent: "informational",
+          intentLabel: "Informational / Commercial",
+          keywords: "how to get free domain hostinger, free domain qualification",
+          anchor: "free domain registration with Hostinger",
+          passesTo: "Node 04 (Coupons), Node 01 (Review)",
+          url: "/domain-guide.html"
+        },
+        {
+          id: "NODE 16",
+          title: "Choosing High-Converting TLDs (.com vs .net)",
+          cluster: "domain",
+          clusterLabel: "Outer: Domain & Migration",
+          entityType: "Top-Level Domain Entity",
+          intent: "informational",
+          intentLabel: "Informational",
+          keywords: "best domain extension for business, does .com rank better",
+          anchor: "TLD authority and domain selection",
+          passesTo: "Node 15 (Free Domain Claim), Node 05 (Tools)",
+          url: "/domain-guide.html"
+        },
+        {
+          id: "NODE 17",
+          title: "WHOIS Privacy Protection Guide",
+          cluster: "domain",
+          clusterLabel: "Outer: Domain & Migration",
+          entityType: "Domain Privacy Entity",
+          intent: "informational",
+          intentLabel: "Informational",
+          keywords: "what is whois privacy protection, why pay for privacy",
+          anchor: "lifetime free WHOIS privacy protection",
+          passesTo: "Node 01 (Hostinger Free Privacy Bundle)",
+          url: "/domain-guide.html"
+        },
+        {
+          id: "NODE 18",
+          title: "Zero-Downtime WordPress Migration Protocol",
+          cluster: "domain",
+          clusterLabel: "Outer: Domain & Migration",
+          entityType: "Procedural Migration Entity",
+          intent: "informational",
+          intentLabel: "Informational / How-To",
+          keywords: "how to migrate wordpress zero downtime, automated migration",
+          anchor: "zero-downtime WordPress migration tutorial",
+          passesTo: "Node 04 (Coupons), Node 01 (Review)",
+          url: "/migration-guide.html"
+        },
+        {
+          id: "NODE 19",
+          title: "SPF, DKIM & DMARC DNS Email Configuration",
+          cluster: "domain",
+          clusterLabel: "Outer: Domain & Migration",
+          entityType: "Email Security Entity",
+          intent: "informational",
+          intentLabel: "Informational / How-To",
+          keywords: "spf dkim dmarc dns hostinger, fix emails going to spam",
+          anchor: "SPF and DKIM email records setup",
+          passesTo: "Node 01 (Hostinger Business Email)",
+          url: "/tutorials.html"
+        },
+        {
+          id: "NODE 20",
+          title: "WooCommerce Hosting Architecture & Scale",
+          cluster: "usecases",
+          clusterLabel: "Core: Project Use Cases",
+          entityType: "Project Niche Entity",
+          intent: "commercial",
+          intentLabel: "Commercial Investigation",
+          keywords: "best woocommerce hosting 2026, slow checkout hosting fix",
+          anchor: "WooCommerce hosting architecture",
+          passesTo: "Node 02 (Hostinger Business), Node 12 (Redis)",
+          url: "/use-cases.html"
+        },
+        {
+          id: "NODE 21",
+          title: "Agency & Freelancer Multi-Site Management",
+          cluster: "usecases",
+          clusterLabel: "Core: Project Use Cases",
+          entityType: "Project Niche Entity",
+          intent: "commercial",
+          intentLabel: "Commercial Investigation",
+          keywords: "hosting multiple client websites, agency web design hosting",
+          anchor: "agency multi-site hosting setup",
+          passesTo: "Node 03 (Hostinger Cloud), Node 18 (Migration)",
+          url: "/use-cases.html"
+        },
+        {
+          id: "NODE 22",
+          title: "Free SSL Certificate Installation Protocols",
+          cluster: "usecases",
+          clusterLabel: "Core: Project Use Cases",
+          entityType: "Cryptographic Security Entity",
+          intent: "informational",
+          intentLabel: "Informational / How-To",
+          keywords: "install free ssl hostinger, enable hsts wordpress",
+          anchor: "free lifetime SSL certificates",
+          passesTo: "Node 08 (GoDaddy SSL Trap), Node 01 (Review)",
+          url: "/tutorials.html"
+        }
+      ];
+
+      let activeFilter = 'all';
+      let activeSearch = '';
+
+      function renderNodes() {
+        const container = document.getElementById('nodesGrid');
+        if (!container) return;
+
+        const filtered = TOPICAL_NODES.filter(node => {
+          const matchesFilter = activeFilter === 'all' || node.cluster === activeFilter;
+          const searchLower = activeSearch.toLowerCase();
+          const matchesSearch = !activeSearch || 
+            node.title.toLowerCase().includes(searchLower) ||
+            node.keywords.toLowerCase().includes(searchLower) ||
+            node.anchor.toLowerCase().includes(searchLower) ||
+            node.entityType.toLowerCase().includes(searchLower);
+          return matchesFilter && matchesSearch;
+        });
+
+        if (filtered.length === 0) {
+          container.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; background: var(--bg-surface); border-radius: var(--radius-xl); border: 1px dashed var(--border-default);">
+              <p style="color: var(--text-muted); font-size: 1rem;">No semantic nodes match your search query.</p>
+              <button onclick="filterNodes('all', document.querySelector('.filter-btn')); document.getElementById('nodeSearchInput').value='';" class="btn btn-secondary btn-sm" style="margin-top: 1rem;">
+                Reset Filters
+              </button>
+            </div>
+          `;
+          return;
+        }
+
+        let html = '';
+        filtered.forEach(node => {
+          let intentClass = 'intent-informational';
+          if (node.intent === 'transactional') intentClass = 'intent-transactional';
+          if (node.intent === 'commercial') intentClass = 'intent-commercial';
+
+          html += `
+            <div class="node-card">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: #2563eb;">${node.id}</span>
+                  <span class="intent-badge ${intentClass}">${node.intentLabel}</span>
+                </div>
+                <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; line-height: 1.3;">${node.title}</h3>
+                <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                  Cluster: <strong>${node.clusterLabel}</strong><br />
+                  Entity: <strong>${node.entityType}</strong>
+                </div>
+                
+                <div style="background: var(--bg-surface-subtle); border-radius: var(--radius-sm); padding: 0.75rem; font-size: 0.75rem; margin-bottom: 0.75rem;">
+                  <div style="color: var(--text-muted); margin-bottom: 0.25rem;">Target Queries:</div>
+                  <code style="font-family: var(--font-mono); color: var(--text-primary);">${node.keywords}</code>
+                </div>
+
+                <div style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                  <span style="color: var(--text-muted);">Passes Authority to:</span><br />
+                  <strong>${node.passesTo}</strong><br />
+                  <span style="color: var(--text-muted); margin-top: 0.25rem; display: block;">Primary Anchor:</span>
+                  <em>"${node.anchor}"</em>
+                </div>
+              </div>
+
+              <div style="padding-top: 0.75rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.75rem; color: #059669; font-weight: 600;">Active in SCN</span>
+                <a href="${node.url}" class="btn btn-secondary btn-sm">
+                  Visit Live Page →
+                </a>
+              </div>
+            </div>
+          `;
+        });
+
+        container.innerHTML = html;
+      }
+
+      function filterNodes(cluster, btnElement) {
+        activeFilter = cluster;
+        document.querySelectorAll('#clusterFilterBar .filter-btn').forEach(btn => btn.classList.remove('active'));
+        if (btnElement) btnElement.classList.add('active');
+        renderNodes();
+      }
+
+      function searchNodes(query) {
+        activeSearch = query;
+        renderNodes();
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        renderNodes();
+      });
+    </script>
+  </body>
+</html>

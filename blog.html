@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Hosting Performance Articles & Engineering Case Studies — HostVerdict</title>
+    <meta name="description" content="Technical hosting articles, benchmark studies, and architectural performance analyses by Farhan Momen. Learn how to optimize WordPress, avoid renewal traps, and scale server throughput." />
+    <link rel="canonical" href="https://hostverdict.com/blog.html" />
+    
+    <meta property="og:type" content="blog" />
+    <meta property="og:title" content="Web Hosting Performance Articles & Engineering Case Studies — HostVerdict" />
+    <meta property="og:description" content="Technical hosting articles, benchmark studies, and architectural performance analyses by Farhan Momen." />
+    <meta property="og:site_name" content="HostVerdict" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <!-- Top Announcement Strip -->
+    <div class="top-banner">
+      <span style="display: inline-flex; align-items: center; gap: 0.35rem;"><svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20" style="color: #fbbf24;"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg><strong>Hostinger Special:</strong> 78% Off + Free Domain + Free Lifetime SSL</span>
+      <span aria-hidden="true">·</span>
+      <span class="top-banner-link" onclick="openDealModal('hostinger')">Claim Deal →</span>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="site-brand">
+          <span class="brand-icon">HV</span>
+          <span>HostVerdict<span class="brand-dot">.</span></span>
+        </a>
+        <nav class="site-nav">
+          <a href="/comparisons.html" class="nav-link">Comparisons</a>
+          <a href="/reviews.html" class="nav-link">Reviews</a>
+          <a href="/deals.html" class="nav-link">Deals & Coupons</a>
+          <a href="/tutorials.html" class="nav-link">Tutorials</a>
+          <a href="/tools.html" class="nav-link">Tools</a>
+          <a href="/blog.html" class="nav-link active">Articles</a>
+          <a href="/about.html" class="nav-link">About Lab</a>
+        </nav>
+        <div class="header-actions">
+          <button onclick="openDealModal('hostinger')" class="btn-deal-primary">
+            Claim 78% Off
+          </button>
+          <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Toggle Navigation">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container" style="max-width: 54rem;">
+        <div class="section-header" style="text-align: left; margin-bottom: 3rem;">
+          <div class="section-kicker">Research & Engineering Reports</div>
+          <h1 class="section-title">Web Hosting Performance Articles & Studies</h1>
+          <p class="section-subtitle">
+            Deep-dive investigations into web server response times, caching engines, database optimizations, and hosting pricing economics.
+          </p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+          
+          <!-- Article 1 (Featured) -->
+          <article class="feature-card" style="padding: 2.25rem;">
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; display: flex; gap: 0.75rem; align-items: center;">
+              <span>Benchmark Study</span>
+              <span aria-hidden="true">·</span>
+              <span>Updated October 2026</span>
+              <span aria-hidden="true">·</span>
+              <span>8 min read</span>
+            </div>
+            <h2 style="font-size: 1.45rem; margin-bottom: 0.75rem; color: var(--text-primary);">
+              Top 5 Web Hosting Providers Ranked: The 12-Month TTFB & Stress-Test Study
+            </h2>
+            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.9375rem; margin-bottom: 1.25rem;">
+              Unlike reviewers who test empty sample templates, our live traffic test accounts handle peak surges of 15,000 monthly visitors, dynamic checkout queries, and background cron jobs. See why Hostinger ranked #1 overall for speed and renewal value, followed by SiteGround and Namecheap.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.8125rem; font-weight: 600; color: var(--brand-primary);">By Farhan Momen</span>
+              <a href="/reviews.html" class="btn btn-secondary btn-sm">Read Full Study →</a>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="feature-card" style="padding: 2.25rem;">
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; display: flex; gap: 0.75rem; align-items: center;">
+              <span>Server Architecture</span>
+              <span aria-hidden="true">·</span>
+              <span>September 2026</span>
+              <span aria-hidden="true">·</span>
+              <span>6 min read</span>
+            </div>
+            <h2 style="font-size: 1.45rem; margin-bottom: 0.75rem; color: var(--text-primary);">
+              LiteSpeed vs. NGINX vs. Apache: Why Server Engine Dictates WordPress Concurrency
+            </h2>
+            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.9375rem; margin-bottom: 1.25rem;">
+              We break down the architectural differences between process-driven Apache and event-driven LiteSpeed. Learn how server-level caching bypasses slow PHP interpreters to serve cached HTML in under 45 milliseconds.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.8125rem; font-weight: 600; color: var(--brand-primary);">By Farhan Momen</span>
+              <a href="/tutorials.html" class="btn btn-secondary btn-sm">View Technical Breakdown →</a>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="feature-card" style="padding: 2.25rem;">
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; display: flex; gap: 0.75rem; align-items: center;">
+              <span>Pricing Transparency</span>
+              <span aria-hidden="true">·</span>
+              <span>August 2026</span>
+              <span aria-hidden="true">·</span>
+              <span>5 min read</span>
+            </div>
+            <h2 style="font-size: 1.45rem; margin-bottom: 0.75rem; color: var(--text-primary);">
+              How to Avoid the 300% Hosting Renewal Price Hike Trap
+            </h2>
+            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.9375rem; margin-bottom: 1.25rem;">
+              Most web hosting introductory prices look enticing at $2 to $4 per month, but silently renew at $15 to $20/month. Discover how to lock in the longest initial term and calculate 3-year true ownership cost before swiping your card.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.8125rem; font-weight: 600; color: var(--brand-primary);">By Farhan Momen</span>
+              <a href="/tools.html" class="btn btn-secondary btn-sm">Use 3-Year Calculator →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Global Deal Modal -->
+    <div id="dealModal" class="modal-overlay">
+      <div class="modal-card">
+        <button class="modal-close-btn" onclick="closeDealModal()" aria-label="Close modal">&times;</button>
+        <span style="font-size:0.75rem; font-weight:700; color:#2563eb; text-transform:uppercase;">Verified Referral Partner</span>
+        <h3 id="modalProviderTitle" style="font-size:1.35rem; font-weight:800; margin:0.35rem 0 0.5rem;">Hostinger Special Promotion</h3>
+        <p id="modalDiscountText" style="font-size:0.875rem; color:#475569; margin-bottom:1.5rem;">Up to 78% Off + 3 Months Free & Free Custom Domain</p>
+        
+        <div style="background:#f8fafc; border:1px dashed #2563eb; border-radius:8px; padding:1.25rem; text-align:center; margin-bottom:1.5rem;">
+          <span style="font-size:0.75rem; color:#64748b; display:block; margin-bottom:0.25rem;">Click to copy promo voucher code:</span>
+          <span id="modalCouponCode" style="font-family:var(--font-mono); font-size:1.5rem; font-weight:800; color:#1e40af; letter-spacing:0.05em; display:block;">XV5MARCWR0H8</span>
+        </div>
+
+        <button id="modalVisitBtn" class="btn btn-primary btn-lg" style="width:100%;">
+          Copy Code & Visit Hostinger
+        </button>
+      </div>
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="affiliate-disclosure-box">
+          <strong>Editorial & Affiliate Disclosure:</strong> HostVerdict is an independently funded web hosting benchmark laboratory operated by Farhan Momen. When you purchase hosting through our links, we may receive a referral commission at no additional cost to you.
+        </div>
+        <div class="footer-bottom">
+          <div>&copy; 2026 HostVerdict. All rights reserved.</div>
+          <div><a href="/" style="color:#94a3b8;">Back to Home</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/scripts/main.js"></script>
+  </body>
+</html>
