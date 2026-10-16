@@ -1,6 +1,6 @@
-# Impeccable Design Language Integration for HostVerdict
+# Impeccable Design Language Integration for HostMarc
 **Design Philosophy:** Paul Bakaus’s *Impeccable* Design System (`pbakaus/impeccable`)  
-**Target:** HostVerdict Full-Stack Static Platform  
+**Target:** HostMarc Full-Stack Static Platform  
 **Scope:** Comprehensive Craft Polish across Persuade, Operate, Read, and Experience Modes  
 
 ---
@@ -8,7 +8,7 @@
 ## User Review & Critical Decisions
 
 > [!IMPORTANT]
-> The design upgrade below translates Paul Bakaus's *Impeccable* rules into HostVerdict’s multi-page static architecture based on the user's confirmed choices:
+> The design upgrade below translates Paul Bakaus's *Impeccable* rules into HostMarc’s multi-page static architecture based on the user's confirmed choices:
 
 - **Confirmed Decision 1 (Scope)**: Comprehensive design polish applied across the entire site:
   - *Persuade Mode*: Homepage (`index.html`), Comparison Matrix (`comparisons.html`), and Deals Hub (`deals.html`).
@@ -24,7 +24,7 @@
 ### What is *Impeccable*?
 Created by Paul Bakaus (creator of jQuery UI, former Web Stories/AMP engineering lead at Google), *Impeccable* is an open-source design skill system with over 60 deterministic detector rules designed to eradicate "AI slop" and elevate digital interfaces to human-level craftsmanship.
 
-### Core Impeccable Tenets Implemented on HostVerdict:
+### Core Impeccable Tenets Implemented on HostMarc:
 1. **The 4 Surface Modes**: Every page will strictly adopt its tailored design mode:
    - `Persuade`: High contrast, asymmetric hierarchy, dominant focal anchors, clear winner badges, single-line action verbs.
    - `Operate`: High data density, tabular numeric alignment (`tabular-nums`), instantaneous state transitions, segmented control clarity.

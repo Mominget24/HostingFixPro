@@ -131,12 +131,51 @@ function closeDealModal() {
   }
 }
 
-// 5. Mobile Navigation
+// 5. Mobile Navigation Controller
 function toggleMobileNav() {
   const drawer = document.getElementById('mobileNavDrawer');
-  if (drawer) {
-    drawer.classList.toggle('open');
+  if (!drawer) return;
+  if (drawer.classList.contains('open')) {
+    closeMobileNav();
+  } else {
+    openMobileNav();
   }
+}
+
+function openMobileNav() {
+  const drawer = document.getElementById('mobileNavDrawer');
+  const backdrop = document.getElementById('mobileNavBackdrop');
+  const btns = document.querySelectorAll('.mobile-menu-btn');
+  if (drawer) drawer.classList.add('open');
+  if (backdrop) backdrop.classList.add('open');
+  btns.forEach(btn => {
+    btn.classList.add('is-active');
+    btn.setAttribute('aria-expanded', 'true');
+  });
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileNav() {
+  const drawer = document.getElementById('mobileNavDrawer');
+  const backdrop = document.getElementById('mobileNavBackdrop');
+  const btns = document.querySelectorAll('.mobile-menu-btn');
+  if (drawer) drawer.classList.remove('open');
+  if (backdrop) backdrop.classList.remove('open');
+  btns.forEach(btn => {
+    btn.classList.remove('is-active');
+    btn.setAttribute('aria-expanded', 'false');
+  });
+  document.body.style.overflow = '';
+}
+
+// Global mobile nav listeners
+if (typeof document !== 'undefined') {
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMobileNav();
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) closeMobileNav();
+  });
 }
 
 // 6. Sticky Deal Bar
@@ -144,11 +183,11 @@ function initStickyBar() {
   const bar = document.getElementById('stickyDealBar');
   if (!bar) return;
   
-  let dismissed = sessionStorage.getItem('hv_sticky_dismissed');
+  let dismissed = sessionStorage.getItem('hm_sticky_dismissed');
   if (dismissed) return;
   
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 400 && !sessionStorage.getItem('hv_sticky_dismissed')) {
+    if (window.scrollY > 400 && !sessionStorage.getItem('hm_sticky_dismissed')) {
       bar.classList.add('visible');
     } else {
       bar.classList.remove('visible');
@@ -160,7 +199,7 @@ function dismissStickyBar() {
   const bar = document.getElementById('stickyDealBar');
   if (bar) {
     bar.classList.remove('visible');
-    sessionStorage.setItem('hv_sticky_dismissed', 'true');
+    sessionStorage.setItem('hm_sticky_dismissed', 'true');
   }
 }
 
