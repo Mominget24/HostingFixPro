@@ -206,11 +206,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, onOpenDeal
               </p>
               <div className="pt-2 space-y-3 text-sm">
                 <a
-                  href="mailto:support@hostingfixpro.com"
+                  href="mailto:support@hostmarc.com"
                   className="flex items-center gap-2.5 text-sky-700 hover:text-sky-800 font-semibold transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                  <span>support@hostingfixpro.com</span>
+                  <span>support@hostmarc.com</span>
                 </a>
                 <div className="flex items-center gap-2 text-xs text-slate-500">
                   <Clock className="w-4 h-4 text-slate-400" />

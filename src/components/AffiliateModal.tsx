@@ -153,7 +153,7 @@ export const AffiliateModal: React.FC<AffiliateModalProps> = ({
               onClick={onClose}
               className="text-xs text-slate-500 hover:text-slate-800 text-center py-1 transition-colors"
             >
-              Back to HostingFixPro
+              Back to HostMarc
             </button>
           </div>
         </div>

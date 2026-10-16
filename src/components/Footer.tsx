@@ -16,7 +16,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenDeal }) => {
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-2">
               <span className="text-xl font-bold tracking-tight text-white font-display">
-                HostingFix<span className="text-sky-400">Pro</span>
+                HostMarc<span className="text-sky-400">Pro</span>
               </span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
@@ -169,10 +169,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenDeal }) => {
               </li>
               <li>
                 <a
-                  href="mailto:support@hostingfixpro.com"
+                  href="mailto:support@hostmarc.com"
                   className="hover:text-white transition-colors flex items-center gap-1.5"
                 >
-                  <Mail className="w-3.5 h-3.5" /> support@hostingfixpro.com
+                  <Mail className="w-3.5 h-3.5" /> support@hostmarc.com
                 </a>
               </li>
               <li className="pt-2">
@@ -200,11 +200,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenDeal }) => {
         {/* FTC Disclosure & Legal Bar */}
         <div className="pt-8 space-y-4 text-xs text-slate-500">
           <p className="leading-relaxed">
-            <span className="font-semibold text-slate-400">Affiliate Disclosure:</span> HostingFixPro is reader-supported. When you purchase hosting or domain names through links on our site, we may earn an affiliate commission at no extra cost to you. This supports our independent speed benchmarks and server labs. All test results, PageSpeed metrics, and recommendations reflect honest, hands-on production testing.
+            <span className="font-semibold text-slate-400">Affiliate Disclosure:</span> HostMarc is reader-supported. When you purchase hosting or domain names through links on our site, we may earn an affiliate commission at no extra cost to you. This supports our independent speed benchmarks and server labs. All test results, PageSpeed metrics, and recommendations reflect honest, hands-on production testing.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-800/80">
             <div>
-              © {new Date().getFullYear()} HostingFixPro. All rights reserved.
+              © {new Date().getFullYear()} HostMarc. All rights reserved.
             </div>
             <div className="flex items-center gap-4">
               <button onClick={() => onNavigate('about')} className="hover:text-slate-400 transition-colors">Editorial Ethics</button>

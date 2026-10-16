@@ -81,7 +81,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenDeal }) 
             Founder & Infrastructure Architect
           </span>
           <h1 className="text-3xl sm:text-5xl font-bold font-display text-white">
-            About HostingFixPro & Our Testing Mission
+            About HostMarc & Our Testing Mission
           </h1>
           <p className="text-slate-300 text-base sm:text-lg max-w-3xl leading-relaxed">
             Why we built an independent web hosting benchmark lab to protect small businesses, creators, and freelancers from predatory renewal fees and misleading reviews.
@@ -215,7 +215,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenDeal }) 
               Hi, I'm Farhan Momen. Over the last 5+ years, I've developed, scaled, and managed custom web applications and live WooCommerce stores. In 2021, I grew frustrated with traditional review sites that consistently ranked slow, overpriced web hosts as #1 simply because those hosts paid the highest affiliate payouts.
             </p>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              When I migrated my production clients to modern LiteSpeed cloud hosting on Hostinger, page speeds improved by up to 2.4 seconds, customer checkouts sped up, and hosting renewal invoices dropped by over 60%. I created HostingFixPro to share verified benchmarks, zero-downtime migration steps, and transparent pricing math so you never get trapped by surprise $80/year SSL fees or slow servers.
+              When I migrated my production clients to modern LiteSpeed cloud hosting on Hostinger, page speeds improved by up to 2.4 seconds, customer checkouts sped up, and hosting renewal invoices dropped by over 60%. I created HostMarc to share verified benchmarks, zero-downtime migration steps, and transparent pricing math so you never get trapped by surprise $80/year SSL fees or slow servers.
             </p>
 
             <div className="pt-2 flex flex-wrap items-center gap-3">
@@ -245,7 +245,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenDeal }) 
             Our Guiding Principles
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display">
-            The HostingFixPro Testing Standard
+            The HostMarc Testing Standard
           </h2>
         </div>
 
@@ -292,7 +292,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenDeal }) 
             How This Site Is Monetized & Why You Can Trust Our Data
           </h3>
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            HostingFixPro participates in verified partner affiliate programs with Hostinger, Namecheap, and other web infrastructure providers. When you click our partner links and purchase hosting or a domain, we may receive compensation. This does not cost you a single extra penny; in fact, our partner links and coupon codes (e.g., <code>HOSTINGFIXPRO</code>) typically provide up to 75% off standard rates plus free extra months.
+            HostMarc participates in verified partner affiliate programs with Hostinger, Namecheap, and other web infrastructure providers. When you click our partner links and purchase hosting or a domain, we may receive compensation. This does not cost you a single extra penny; in fact, our partner links and coupon codes (e.g., <code>HOSTMARC</code>) typically provide up to 75% off standard rates plus free extra months.
           </p>
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
             Affiliate partnerships fund our independent testing lab, uptime ping monitors, and free tools. However, commission rates never dictate our reviews. We recommend Hostinger because it consistently outperforms rivals on LiteSpeed hardware and price integrity.

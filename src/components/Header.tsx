@@ -48,12 +48,21 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate, onOpenD
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Zone 1: Single text element wordmark */}
+          {/* Zone 1: Single text element wordmark with Tech Logo */}
           <button
             onClick={() => handleNavClick('home')}
-            className="text-xl font-bold tracking-tight text-slate-900 hover:text-sky-600 transition-colors flex items-center gap-1.5 font-display"
+            className="text-xl font-bold tracking-tight text-slate-900 hover:text-sky-600 transition-colors flex items-center gap-2.5 font-display"
           >
-            <span>HostingFix<span className="text-sky-600">Pro</span></span>
+            <img 
+              src="/assets/images/hostmarc-logo.svg" 
+              alt="HostMarc Logo" 
+              className="w-8 h-8 rounded-lg shadow-sm"
+            />
+            <span className="flex items-baseline">
+              <span className="text-slate-900 font-extrabold">Host</span>
+              <span className="text-sky-600 font-extrabold">Marc</span>
+              <span className="text-sky-500 font-black">.</span>
+            </span>
           </button>
 
           {/* Zone 2: Navigation Links */}

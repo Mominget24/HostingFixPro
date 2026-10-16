@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hostverdict.com/sitemap.xml
+Sitemap: https://hostmarc.com/sitemap.xml

@@ -1,5 +1,5 @@
 /**
- * HostVerdict — Master Vanilla JavaScript Engine
+ * HostMarc — Master Vanilla JavaScript Engine
  * Pure Native ES6 / No Framework Overhead / Lightning Fast
  */
 

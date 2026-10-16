@@ -1,6 +1,6 @@
 # Semantic SEO Topical Map: WordPress & LiteSpeed Hosting
 **Framework:** Koray Tuğberk Gübür’s Holistic Semantic SEO Architecture  
-**Target Domain:** HostVerdict (`https://hostverdict.com`)  
+**Target Domain:** HostMarc (`https://hostmarc.com`)  
 **Status:** Production Blueprint & Content Network Specification  
 
 ---
@@ -9,7 +9,7 @@
 
 ### A. Source Context (SC)
 - **Definition:** The fundamental commercial and philosophical identity of the website that defines *why* it belongs in the Search Engine Results Pages (SERPs).
-- **HostVerdict Source Context:** An independent hardware benchmarking and web engineering laboratory specializing in WordPress server performance, LiteSpeed optimizations, and domain registration bundling. It serves developers, agency owners, and cost-conscious creators seeking sub-200ms TTFB without hidden renewal rate traps.
+- **HostMarc Source Context:** An independent hardware benchmarking and web engineering laboratory specializing in WordPress server performance, LiteSpeed optimizations, and domain registration bundling. It serves developers, agency owners, and cost-conscious creators seeking sub-200ms TTFB without hidden renewal rate traps.
 - **Monetization Angle:** Primary affiliate referrals to verified LiteSpeed hosting infrastructure (Hostinger, Bluehost, Namecheap) driven by empirical benchmark evidence, not arbitrary ratings.
 
 ### B. Central Entity (CE)
@@ -257,13 +257,13 @@
 Koray’s law of internal page rank flow states:
 1. **Never create two-way circular loops between identical hierarchy levels.** Informational nodes must act as authoritative feeders pointing upward into commercial target hubs.
 2. **First-Degree Connections:** Every node must link to its immediate parent and adjacent sibling entity in the same cluster.
-3. **Anchor Text Diversity Rule:** Do not use 100% exact-match anchor text. Distribute links across 60% partial-match semantic variations, 30% exact topic title, and 10% branded phrases (`HostVerdict benchmark`).
+3. **Anchor Text Diversity Rule:** Do not use 100% exact-match anchor text. Distribute links across 60% partial-match semantic variations, 30% exact topic title, and 10% branded phrases (`HostMarc benchmark`).
 
 ---
 
-## 5. Implementation in HostVerdict
+## 5. Implementation in HostMarc
 
 The complete 22-node network is interactive in the application via:
 1. **Visual Explorer:** `/topical-map.html` — Interactive node search, filter by cluster, intent inspection, and live links.
 2. **Data Structure:** Embedded JSON data in `/scripts/topicalMapData.js` power the visual graph.
-3. **Live Links:** Every node maps to working URLs within the HostVerdict static multi-page website.
+3. **Live Links:** Every node maps to working URLs within the HostMarc static multi-page website.

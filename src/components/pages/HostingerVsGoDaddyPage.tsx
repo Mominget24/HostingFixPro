@@ -42,7 +42,7 @@ export const HostingerVsGoDaddyPage: React.FC<HostingerVsGoDaddyPageProps> = ({
   // Structured Data for Google AEO / Rich Snippets & Document Title
   useEffect(() => {
     const originalTitle = document.title;
-    document.title = "Hostinger vs GoDaddy: Which Web Host Wins in 2025? (Real Speed Test) - HostingFixPro";
+    document.title = "Hostinger vs GoDaddy: Which Web Host Wins in 2025? (Real Speed Test) - HostMarc";
 
     const metaDesc = document.querySelector('meta[name="description"]');
     const originalMeta = metaDesc ? metaDesc.getAttribute('content') : null;
@@ -63,7 +63,7 @@ export const HostingerVsGoDaddyPage: React.FC<HostingerVsGoDaddyPageProps> = ({
         "description": "Unbiased comparison of Hostinger vs GoDaddy web hosting with real speed tests, pricing, and features.",
         "brand": {
           "@type": "Brand",
-          "name": "HostingFixPro"
+          "name": "HostMarc"
         },
         "aggregateRating": {
           "@type": "AggregateRating",
