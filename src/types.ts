@@ -4,6 +4,7 @@ export type PageId =
   | 'reviews'
   | 'use-cases'
   | 'comparisons' 
+  | 'hostinger-vs-godaddy'
   | 'migration-guide' 
   | 'tools' 
   | 'domain-guide' 

@@ -15,6 +15,7 @@ import { ContactPage } from './components/pages/ContactPage';
 import { TutorialsPage } from './components/pages/TutorialsPage';
 import { HonestReviewPage } from './components/pages/HonestReviewPage';
 import { UseCasesPage } from './components/pages/UseCasesPage';
+import { HostingerVsGoDaddyPage } from './components/pages/HostingerVsGoDaddyPage';
 import { affiliateProviders, trackAffiliateClick } from './config/affiliates';
 
 export default function App() {
@@ -40,6 +41,7 @@ export default function App() {
         'reviews',
         'use-cases',
         'comparisons', 
+        'hostinger-vs-godaddy',
         'migration-guide', 
         'tools', 
         'domain-guide', 
@@ -121,6 +123,12 @@ export default function App() {
         )}
         {currentPage === 'comparisons' && (
           <ComparisonsPage 
+            onNavigate={handleNavigate} 
+            onOpenDeal={handleOpenDeal} 
+          />
+        )}
+        {currentPage === 'hostinger-vs-godaddy' && (
+          <HostingerVsGoDaddyPage 
             onNavigate={handleNavigate} 
             onOpenDeal={handleOpenDeal} 
           />

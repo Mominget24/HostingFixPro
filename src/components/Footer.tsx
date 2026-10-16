@@ -79,6 +79,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenDeal }) => {
               </li>
               <li>
                 <button
+                  onClick={() => onNavigate('hostinger-vs-godaddy')}
+                  className="hover:text-emerald-400 transition-colors text-xs text-sky-400 font-semibold"
+                >
+                  Hostinger vs GoDaddy (2025)
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => onNavigate('migration-guide')}
                   className="hover:text-white transition-colors"
                 >

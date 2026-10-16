@@ -5,6 +5,7 @@ import {
   Check, 
   X, 
   ArrowUpRight, 
+  ArrowRight,
   ShieldCheck, 
   Gauge, 
   Clock, 
@@ -198,6 +199,26 @@ export const ComparisonsPage: React.FC<ComparisonsPageProps> = ({ onNavigate, on
                     ))}
                   </div>
                 </div>
+
+                {comp.id === 'hostinger-vs-godaddy' && (
+                  <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-sky-50/70 p-4 rounded-xl border border-sky-100 mt-4">
+                    <div className="space-y-0.5">
+                      <div className="text-xs font-bold text-sky-900 uppercase tracking-wider">
+                        Full Deep Dive Review Available (2025 Lab Test)
+                      </div>
+                      <div className="text-xs text-slate-600">
+                        Read our 9-section real speed test, 3-year pricing audit, and dashboard screenshot comparison.
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => onNavigate('hostinger-vs-godaddy')}
+                      className="py-2 px-4 bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs rounded-lg flex items-center justify-center gap-1.5 transition-colors shadow-xs whitespace-nowrap self-start sm:self-auto"
+                    >
+                      <span>Read Full In-Depth Review</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </div>

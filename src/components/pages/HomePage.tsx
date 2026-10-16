@@ -588,12 +588,18 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDeal }) =>
               Compare Hostinger, Namecheap, Contabo, and legacy competitors across server response, disk hardware, and renewal costs.
             </p>
           </div>
-          <div>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => onNavigate('hostinger-vs-godaddy')}
+              className="text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 px-3 py-1.5 rounded-lg flex items-center gap-1 transition-colors"
+            >
+              <span>Hostinger vs GoDaddy (2025 Review) →</span>
+            </button>
             <button
               onClick={() => onNavigate('comparisons')}
               className="text-xs font-bold text-sky-600 hover:text-sky-700 flex items-center gap-1"
             >
-              <span>View In-Depth Testing Methodology</span>
+              <span>View All Benchmarks</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
